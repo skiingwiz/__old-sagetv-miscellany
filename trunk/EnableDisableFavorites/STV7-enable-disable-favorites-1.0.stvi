@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="NUXHA-336484">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="NUXHA-336485"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="NUXHA-336486">
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;OPUS4A-176760&quot;)" Sym="NUXHA-336518">
+    <Branch Name="else" Sym="NUXHA-336519">
+     <Action Name="SetWidgetName(Widg, &quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;) &quot;)" Sym="NUXHA-336521"/>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336520">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=OPUS4A-176760 Could not rename from: \&quot;GetFavoriteDescription(Favorite)\&quot; to: \&quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;) \&quot;&quot;)" Sym="NUXHA-336522"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;OPUS4A-176772&quot;)" Sym="NUXHA-336523">
+    <Branch Name="else" Sym="NUXHA-336524">
+     <Action Name="SetWidgetName(Widg, &quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;) &quot;)" Sym="NUXHA-336526"/>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336525">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=OPUS4A-176772 Could not rename from: \&quot;GetFavoriteDescription(Favorite)\&quot; to: \&quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;) \&quot;&quot;)" Sym="NUXHA-336527"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;BASE-56721&quot;)" Sym="NUXHA-336546">
+    <Branch Name="else" Sym="NUXHA-336547">
+     <Action Name="SetWidgetName(Widg, &quot;\&quot;Advanced Options for Favorite:\\n\&quot; + java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)  + \&quot;\\n \\n\&quot;&quot;)" Sym="NUXHA-336549"/>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336548">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-56721 Could not rename from: \&quot;\&quot;Advanced Options for Favorite:\\n\&quot; + GetFavoriteDescription(Favorite) + \&quot;\\n \\n\&quot;\&quot; to: \&quot;\&quot;Advanced Options for Favorite:\\n\&quot; + java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)  + \&quot;\\n \\n\&quot;\&quot;&quot;)" Sym="NUXHA-336550"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="NUXHA-336487"/>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="NUXHA-336488"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="NUXHA-336489">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BASE-64888&quot;)" Sym="NUXHA-336491">
+    <Branch Name="else" Sym="NUXHA-336492">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336477&quot;)" Sym="NUXHA-336495">
+      <Branch Name="else" Sym="NUXHA-336496">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336499"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336497">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336477 \&quot;FavItem\&quot; could not add as child; parent symbol=BASE-64888 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336498"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336493">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-64888 \&quot;FavItem\&quot; missing parent; could not add child with symbol=NUXHA-336477 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336494"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BASE-64888&quot;)" Sym="NUXHA-336500">
+    <Branch Name="else" Sym="NUXHA-336501">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336464&quot;)" Sym="NUXHA-336504">
+      <Branch Name="else" Sym="NUXHA-336505">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336508"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336506">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336464 \&quot;FavItem\&quot; could not add as child; parent symbol=BASE-64888 \&quot;\&quot;&quot;)" Sym="NUXHA-336507"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336502">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-64888 \&quot;FavItem\&quot; missing parent; could not add child with symbol=NUXHA-336464 \&quot;\&quot;&quot;)" Sym="NUXHA-336503"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BASE-64888&quot;)" Sym="NUXHA-336509">
+    <Branch Name="else" Sym="NUXHA-336510">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336477&quot;)" Sym="NUXHA-336513">
+      <Branch Name="else" Sym="NUXHA-336514">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 1)" Sym="NUXHA-336517"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336515">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336477 \&quot;FavItem\&quot; could not move child; parent symbol=BASE-64888 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336516"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336511">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-64888 \&quot;FavItem\&quot; missing parent; could not move child with symbol=NUXHA-336477 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336512"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BASE-56720&quot;)" Sym="NUXHA-336528">
+    <Branch Name="else" Sym="NUXHA-336529">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336472&quot;)" Sym="NUXHA-336532">
+      <Branch Name="else" Sym="NUXHA-336533">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336536"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336534">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336472 \&quot;AdvancedFavOptions\&quot; could not add as child; parent symbol=BASE-56720 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336535"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336530">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-56720 \&quot;AdvancedFavOptions\&quot; missing parent; could not add child with symbol=NUXHA-336472 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336531"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BASE-56720&quot;)" Sym="NUXHA-336537">
+    <Branch Name="else" Sym="NUXHA-336538">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336472&quot;)" Sym="NUXHA-336541">
+      <Branch Name="else" Sym="NUXHA-336542">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 6)" Sym="NUXHA-336545"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336543">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336472 \&quot;AdvancedFavOptions\&quot; could not move child; parent symbol=BASE-56720 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336544"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336539">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-56720 \&quot;AdvancedFavOptions\&quot; missing parent; could not move child with symbol=NUXHA-336472 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336540"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336464&quot;)" Sym="NUXHA-336551">
+    <Branch Name="else" Sym="NUXHA-336552">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336465&quot;)" Sym="NUXHA-336555">
+      <Branch Name="else" Sym="NUXHA-336556">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336559"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336557">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336465 \&quot;\&quot; could not add as child; parent symbol=NUXHA-336464 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336558"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336553">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336464 \&quot;\&quot; missing parent; could not add child with symbol=NUXHA-336465 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot;&quot;)" Sym="NUXHA-336554"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336465&quot;)" Sym="NUXHA-336560">
+    <Branch Name="else" Sym="NUXHA-336561">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336466&quot;)" Sym="NUXHA-336564">
+      <Branch Name="else" Sym="NUXHA-336565">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336568"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336566">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336466 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; could not add as child; parent symbol=NUXHA-336465 \&quot;true\&quot;&quot;)" Sym="NUXHA-336567"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336562">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336465 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; missing parent; could not add child with symbol=NUXHA-336466 \&quot;true\&quot;&quot;)" Sym="NUXHA-336563"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336465&quot;)" Sym="NUXHA-336569">
+    <Branch Name="else" Sym="NUXHA-336570">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336467&quot;)" Sym="NUXHA-336573">
+      <Branch Name="else" Sym="NUXHA-336574">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336577"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336575">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336467 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; could not add as child; parent symbol=NUXHA-336465 \&quot;false\&quot;&quot;)" Sym="NUXHA-336576"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336571">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336465 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; missing parent; could not add child with symbol=NUXHA-336467 \&quot;false\&quot;&quot;)" Sym="NUXHA-336572"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336466&quot;)" Sym="NUXHA-336578">
+    <Branch Name="else" Sym="NUXHA-336579">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336468&quot;)" Sym="NUXHA-336582">
+      <Branch Name="else" Sym="NUXHA-336583">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336586"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336584">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336468 \&quot;true\&quot; could not add as child; parent symbol=NUXHA-336466 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite)) \&quot;&quot;)" Sym="NUXHA-336585"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336580">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336466 \&quot;true\&quot; missing parent; could not add child with symbol=NUXHA-336468 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite)) \&quot;&quot;)" Sym="NUXHA-336581"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336467&quot;)" Sym="NUXHA-336587">
+    <Branch Name="else" Sym="NUXHA-336588">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336470&quot;)" Sym="NUXHA-336591">
+      <Branch Name="else" Sym="NUXHA-336592">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336595"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336593">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336470 \&quot;false\&quot; could not add as child; parent symbol=NUXHA-336467 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))  \&quot;&quot;)" Sym="NUXHA-336594"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336589">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336467 \&quot;false\&quot; missing parent; could not add child with symbol=NUXHA-336470 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))  \&quot;&quot;)" Sym="NUXHA-336590"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336468&quot;)" Sym="NUXHA-336596">
+    <Branch Name="else" Sym="NUXHA-336597">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336469&quot;)" Sym="NUXHA-336600">
+      <Branch Name="else" Sym="NUXHA-336601">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336604"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336602">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336469 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite)) \&quot; could not add as child; parent symbol=NUXHA-336468 \&quot;Refresh()\&quot;&quot;)" Sym="NUXHA-336603"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336598">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336468 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite)) \&quot; missing parent; could not add child with symbol=NUXHA-336469 \&quot;Refresh()\&quot;&quot;)" Sym="NUXHA-336599"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336470&quot;)" Sym="NUXHA-336605">
+    <Branch Name="else" Sym="NUXHA-336606">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336471&quot;)" Sym="NUXHA-336609">
+      <Branch Name="else" Sym="NUXHA-336610">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336613"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336611">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336471 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))  \&quot; could not add as child; parent symbol=NUXHA-336470 \&quot;Refresh()\&quot;&quot;)" Sym="NUXHA-336612"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336607">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336470 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))  \&quot; missing parent; could not add child with symbol=NUXHA-336471 \&quot;Refresh()\&quot;&quot;)" Sym="NUXHA-336608"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336472&quot;)" Sym="NUXHA-336614">
+    <Branch Name="else" Sym="NUXHA-336615">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336473&quot;)" Sym="NUXHA-336618">
+      <Branch Name="else" Sym="NUXHA-336619">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336622"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336620">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336473 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; could not add as child; parent symbol=NUXHA-336472 \&quot;true\&quot;&quot;)" Sym="NUXHA-336621"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336616">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336472 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; missing parent; could not add child with symbol=NUXHA-336473 \&quot;true\&quot;&quot;)" Sym="NUXHA-336617"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336472&quot;)" Sym="NUXHA-336623">
+    <Branch Name="else" Sym="NUXHA-336624">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336474&quot;)" Sym="NUXHA-336627">
+      <Branch Name="else" Sym="NUXHA-336628">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336631"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336629">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336474 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; could not add as child; parent symbol=NUXHA-336472 \&quot;false\&quot;&quot;)" Sym="NUXHA-336630"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336625">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336472 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; missing parent; could not add child with symbol=NUXHA-336474 \&quot;false\&quot;&quot;)" Sym="NUXHA-336626"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336473&quot;)" Sym="NUXHA-336632">
+    <Branch Name="else" Sym="NUXHA-336633">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336475&quot;)" Sym="NUXHA-336636">
+      <Branch Name="else" Sym="NUXHA-336637">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336640"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336638">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336475 \&quot;true\&quot; could not add as child; parent symbol=NUXHA-336473 \&quot;Enable\&quot;&quot;)" Sym="NUXHA-336639"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336634">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336473 \&quot;true\&quot; missing parent; could not add child with symbol=NUXHA-336475 \&quot;Enable\&quot;&quot;)" Sym="NUXHA-336635"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336474&quot;)" Sym="NUXHA-336641">
+    <Branch Name="else" Sym="NUXHA-336642">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336476&quot;)" Sym="NUXHA-336645">
+      <Branch Name="else" Sym="NUXHA-336646">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336649"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336647">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336476 \&quot;false\&quot; could not add as child; parent symbol=NUXHA-336474 \&quot;Disable\&quot;&quot;)" Sym="NUXHA-336648"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336643">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336474 \&quot;false\&quot; missing parent; could not add child with symbol=NUXHA-336476 \&quot;Disable\&quot;&quot;)" Sym="NUXHA-336644"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336475&quot;)" Sym="NUXHA-336650">
+    <Branch Name="else" Sym="NUXHA-336651">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336468&quot;)" Sym="NUXHA-336654">
+      <Branch Name="else" Sym="NUXHA-336655">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336658"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336656">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336468 \&quot;Enable\&quot; could not add as child; parent symbol=NUXHA-336475 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite)) \&quot;&quot;)" Sym="NUXHA-336657"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336652">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336475 \&quot;Enable\&quot; missing parent; could not add child with symbol=NUXHA-336468 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite)) \&quot;&quot;)" Sym="NUXHA-336653"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336476&quot;)" Sym="NUXHA-336659">
+    <Branch Name="else" Sym="NUXHA-336660">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336470&quot;)" Sym="NUXHA-336663">
+      <Branch Name="else" Sym="NUXHA-336664">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336667"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336665">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336470 \&quot;Disable\&quot; could not add as child; parent symbol=NUXHA-336476 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))  \&quot;&quot;)" Sym="NUXHA-336666"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336661">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336476 \&quot;Disable\&quot; missing parent; could not add child with symbol=NUXHA-336470 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))  \&quot;&quot;)" Sym="NUXHA-336662"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336477&quot;)" Sym="NUXHA-336668">
+    <Branch Name="else" Sym="NUXHA-336669">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336478&quot;)" Sym="NUXHA-336672">
+      <Branch Name="else" Sym="NUXHA-336673">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336676"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336674">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336478 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; could not add as child; parent symbol=NUXHA-336477 \&quot;true\&quot;&quot;)" Sym="NUXHA-336675"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336670">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336477 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;) \&quot; missing parent; could not add child with symbol=NUXHA-336478 \&quot;true\&quot;&quot;)" Sym="NUXHA-336671"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336478&quot;)" Sym="NUXHA-336677">
+    <Branch Name="else" Sym="NUXHA-336678">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336482&quot;)" Sym="NUXHA-336681">
+      <Branch Name="else" Sym="NUXHA-336682">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336685"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336683">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336482 \&quot;true\&quot; could not add as child; parent symbol=NUXHA-336478 \&quot;BGColor=GetProperty(\&quot;ui/disabled_favorite_color\&quot;, \&quot;0xFF0000\&quot;)\&quot;&quot;)" Sym="NUXHA-336684"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336679">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336478 \&quot;true\&quot; missing parent; could not add child with symbol=NUXHA-336482 \&quot;BGColor=GetProperty(\&quot;ui/disabled_favorite_color\&quot;, \&quot;0xFF0000\&quot;)\&quot;&quot;)" Sym="NUXHA-336680"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336482&quot;)" Sym="NUXHA-336686">
+    <Branch Name="else" Sym="NUXHA-336687">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;NUXHA-336483&quot;)" Sym="NUXHA-336690">
+      <Branch Name="else" Sym="NUXHA-336691">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336694"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336692">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336483 \&quot;BGColor=GetProperty(\&quot;ui/disabled_favorite_color\&quot;, \&quot;0xFF0000\&quot;)\&quot; could not add as child; parent symbol=NUXHA-336482 \&quot;BGAlpha=GetProperty(\&quot;ui/disabled_favorite_alpha\&quot;, 36)\&quot;&quot;)" Sym="NUXHA-336693"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336688">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336482 \&quot;BGColor=GetProperty(\&quot;ui/disabled_favorite_color\&quot;, \&quot;0xFF0000\&quot;)\&quot; missing parent; could not add child with symbol=NUXHA-336483 \&quot;BGAlpha=GetProperty(\&quot;ui/disabled_favorite_alpha\&quot;, 36)\&quot;&quot;)" Sym="NUXHA-336689"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;NUXHA-336483&quot;)" Sym="NUXHA-336695">
+    <Branch Name="else" Sym="NUXHA-336696">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BASE-59734&quot;)" Sym="NUXHA-336699">
+      <Branch Name="else" Sym="NUXHA-336700">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="NUXHA-336703"/>
+      </Branch>
+      <Branch Name="null" Sym="NUXHA-336701">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-59734 \&quot;BGAlpha=GetProperty(\&quot;ui/disabled_favorite_alpha\&quot;, 36)\&quot; could not add as child; parent symbol=NUXHA-336483 \&quot;CategoryBGFillThemed\&quot;&quot;)" Sym="NUXHA-336702"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="NUXHA-336697">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=NUXHA-336483 \&quot;BGAlpha=GetProperty(\&quot;ui/disabled_favorite_alpha\&quot;, 36)\&quot; missing parent; could not add child with symbol=BASE-59734 \&quot;CategoryBGFillThemed\&quot;&quot;)" Sym="NUXHA-336698"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="NUXHA-336490"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="NUXHA-336704"/>
+ </Hook>
+ <Action Name="SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;, &quot;&quot;), GetFavoriteSubCategory(Favorite)) " Sym="NUXHA-336468"/>
+ <Action Name="Refresh()" Sym="NUXHA-336469"/>
+ <Action Name="SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + &quot;DisabledFavorite&quot;, GetFavoriteSubCategory(Favorite))  " Sym="NUXHA-336470"/>
+ <Action Name="Refresh()" Sym="NUXHA-336471"/>
+ <Action Name="BGColor=GetProperty(&quot;ui/disabled_favorite_color&quot;, &quot;0xFF0000&quot;)" Sym="NUXHA-336482"/>
+ <Action Name="BGAlpha=GetProperty(&quot;ui/disabled_favorite_alpha&quot;, 36)" Sym="NUXHA-336483"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;) " Sym="NUXHA-336465"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;) " Sym="NUXHA-336472"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;) " Sym="NUXHA-336477"/>
+ <Branch Name="true" Sym="NUXHA-336466"/>
+ <Branch Name="false" Sym="NUXHA-336467"/>
+ <Branch Name="true" Sym="NUXHA-336473"/>
+ <Branch Name="false" Sym="NUXHA-336474"/>
+ <Branch Name="true" Sym="NUXHA-336478"/>
+ <Listener Name="" Sym="NUXHA-336464">
+  <ListenerEvent>Record</ListenerEvent>
+ </Listener>
+ <Item Name="Enable" Sym="NUXHA-336475"/>
+ <Item Name="Disable" Sym="NUXHA-336476"/>
+</Module>
