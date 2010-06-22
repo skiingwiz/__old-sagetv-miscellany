@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="BBJDL-226">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="BBJDL-227"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="BBJDL-228"/>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="BBJDL-229"/>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="BBJDL-230"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="BBJDL-231">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;OPUS4A-125847&quot;)" Sym="BBJDL-233">
+    <Branch Name="else" Sym="BBJDL-234">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-207&quot;)" Sym="BBJDL-237">
+      <Branch Name="else" Sym="BBJDL-238">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-241"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-239">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-207 \&quot;Secondary Menu Items Area\&quot; could not add as child; parent symbol=OPUS4A-125847 \&quot;Restart SageTV\&quot;&quot;)" Sym="BBJDL-240"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-235">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=OPUS4A-125847 \&quot;Secondary Menu Items Area\&quot; missing parent; could not add child with symbol=BBJDL-207 \&quot;Restart SageTV\&quot;&quot;)" Sym="BBJDL-236"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-207&quot;)" Sym="BBJDL-242">
+    <Branch Name="else" Sym="BBJDL-243">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-214&quot;)" Sym="BBJDL-246">
+      <Branch Name="else" Sym="BBJDL-247">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-250"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-248">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-214 \&quot;Restart SageTV\&quot; could not add as child; parent symbol=BBJDL-207 \&quot;ButtonText\&quot;&quot;)" Sym="BBJDL-249"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-244">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-207 \&quot;Restart SageTV\&quot; missing parent; could not add child with symbol=BBJDL-214 \&quot;ButtonText\&quot;&quot;)" Sym="BBJDL-245"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-207&quot;)" Sym="BBJDL-251">
+    <Branch Name="else" Sym="BBJDL-252">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-223&quot;)" Sym="BBJDL-255">
+      <Branch Name="else" Sym="BBJDL-256">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-259"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-257">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-223 \&quot;Restart SageTV\&quot; could not add as child; parent symbol=BBJDL-207 \&quot;ThisItem\&quot;&quot;)" Sym="BBJDL-258"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-253">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-207 \&quot;Restart SageTV\&quot; missing parent; could not add child with symbol=BBJDL-223 \&quot;ThisItem\&quot;&quot;)" Sym="BBJDL-254"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-207&quot;)" Sym="BBJDL-260">
+    <Branch Name="else" Sym="BBJDL-261">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-224&quot;)" Sym="BBJDL-264">
+      <Branch Name="else" Sym="BBJDL-265">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-268"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-266">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-224 \&quot;Restart SageTV\&quot; could not add as child; parent symbol=BBJDL-207 \&quot;SubMenuType\&quot;&quot;)" Sym="BBJDL-267"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-262">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-207 \&quot;Restart SageTV\&quot; missing parent; could not add child with symbol=BBJDL-224 \&quot;SubMenuType\&quot;&quot;)" Sym="BBJDL-263"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-207&quot;)" Sym="BBJDL-269">
+    <Branch Name="else" Sym="BBJDL-270">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-215&quot;)" Sym="BBJDL-273">
+      <Branch Name="else" Sym="BBJDL-274">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-277"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-275">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-215 \&quot;Restart SageTV\&quot; could not add as child; parent symbol=BBJDL-207 \&quot;Confirm\&quot;&quot;)" Sym="BBJDL-276"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-271">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-207 \&quot;Restart SageTV\&quot; missing parent; could not add child with symbol=BBJDL-215 \&quot;Confirm\&quot;&quot;)" Sym="BBJDL-272"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-208&quot;)" Sym="BBJDL-278">
+    <Branch Name="else" Sym="BBJDL-279">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-209&quot;)" Sym="BBJDL-282">
+      <Branch Name="else" Sym="BBJDL-283">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-286"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-284">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-209 \&quot;IsSageTVServerEnabled()\&quot; could not add as child; parent symbol=BBJDL-208 \&quot;true\&quot;&quot;)" Sym="BBJDL-285"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-280">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-208 \&quot;IsSageTVServerEnabled()\&quot; missing parent; could not add child with symbol=BBJDL-209 \&quot;true\&quot;&quot;)" Sym="BBJDL-281"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-208&quot;)" Sym="BBJDL-287">
+    <Branch Name="else" Sym="BBJDL-288">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-210&quot;)" Sym="BBJDL-291">
+      <Branch Name="else" Sym="BBJDL-292">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-295"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-293">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-210 \&quot;IsSageTVServerEnabled()\&quot; could not add as child; parent symbol=BBJDL-208 \&quot;false\&quot;&quot;)" Sym="BBJDL-294"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-289">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-208 \&quot;IsSageTVServerEnabled()\&quot; missing parent; could not add child with symbol=BBJDL-210 \&quot;false\&quot;&quot;)" Sym="BBJDL-290"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-209&quot;)" Sym="BBJDL-296">
+    <Branch Name="else" Sym="BBJDL-297">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-211&quot;)" Sym="BBJDL-300">
+      <Branch Name="else" Sym="BBJDL-301">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-304"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-302">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-211 \&quot;true\&quot; could not add as child; parent symbol=BBJDL-209 \&quot;ServerRestart()\&quot;&quot;)" Sym="BBJDL-303"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-298">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-209 \&quot;true\&quot; missing parent; could not add child with symbol=BBJDL-211 \&quot;ServerRestart()\&quot;&quot;)" Sym="BBJDL-299"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-210&quot;)" Sym="BBJDL-305">
+    <Branch Name="else" Sym="BBJDL-306">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-219&quot;)" Sym="BBJDL-309">
+      <Branch Name="else" Sym="BBJDL-310">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-313"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-311">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-219 \&quot;false\&quot; could not add as child; parent symbol=BBJDL-210 \&quot;Restart()\&quot;&quot;)" Sym="BBJDL-312"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-307">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-210 \&quot;false\&quot; missing parent; could not add child with symbol=BBJDL-219 \&quot;Restart()\&quot;&quot;)" Sym="BBJDL-308"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-215&quot;)" Sym="BBJDL-314">
+    <Branch Name="else" Sym="BBJDL-315">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BASE-45634&quot;)" Sym="BBJDL-318">
+      <Branch Name="else" Sym="BBJDL-319">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-322"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-320">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-45634 \&quot;Confirm\&quot; could not add as child; parent symbol=BBJDL-215 \&quot;MutliSelectOptionsTheme\&quot;&quot;)" Sym="BBJDL-321"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-316">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-215 \&quot;Confirm\&quot; missing parent; could not add child with symbol=BASE-45634 \&quot;MutliSelectOptionsTheme\&quot;&quot;)" Sym="BBJDL-317"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-215&quot;)" Sym="BBJDL-323">
+    <Branch Name="else" Sym="BBJDL-324">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-216&quot;)" Sym="BBJDL-327">
+      <Branch Name="else" Sym="BBJDL-328">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-331"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-329">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-216 \&quot;Confirm\&quot; could not add as child; parent symbol=BBJDL-215 \&quot;ConfirmPanel\&quot;&quot;)" Sym="BBJDL-330"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-325">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-215 \&quot;Confirm\&quot; missing parent; could not add child with symbol=BBJDL-216 \&quot;ConfirmPanel\&quot;&quot;)" Sym="BBJDL-326"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-216&quot;)" Sym="BBJDL-332">
+    <Branch Name="else" Sym="BBJDL-333">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-222&quot;)" Sym="BBJDL-336">
+      <Branch Name="else" Sym="BBJDL-337">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-340"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-338">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-222 \&quot;ConfirmPanel\&quot; could not add as child; parent symbol=BBJDL-216 \&quot;This action will restart SageTV.  Are you sure you want to do this?\&quot;&quot;)" Sym="BBJDL-339"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-334">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-216 \&quot;ConfirmPanel\&quot; missing parent; could not add child with symbol=BBJDL-222 \&quot;This action will restart SageTV.  Are you sure you want to do this?\&quot;&quot;)" Sym="BBJDL-335"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-216&quot;)" Sym="BBJDL-341">
+    <Branch Name="else" Sym="BBJDL-342">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-217&quot;)" Sym="BBJDL-345">
+      <Branch Name="else" Sym="BBJDL-346">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-349"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-347">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-217 \&quot;ConfirmPanel\&quot; could not add as child; parent symbol=BBJDL-216 \&quot;Yes\&quot;&quot;)" Sym="BBJDL-348"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-343">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-216 \&quot;ConfirmPanel\&quot; missing parent; could not add child with symbol=BBJDL-217 \&quot;Yes\&quot;&quot;)" Sym="BBJDL-344"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-216&quot;)" Sym="BBJDL-350">
+    <Branch Name="else" Sym="BBJDL-351">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-218&quot;)" Sym="BBJDL-354">
+      <Branch Name="else" Sym="BBJDL-355">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-358"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-356">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-218 \&quot;ConfirmPanel\&quot; could not add as child; parent symbol=BBJDL-216 \&quot;No\&quot;&quot;)" Sym="BBJDL-357"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-352">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-216 \&quot;ConfirmPanel\&quot; missing parent; could not add child with symbol=BBJDL-218 \&quot;No\&quot;&quot;)" Sym="BBJDL-353"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-217&quot;)" Sym="BBJDL-359">
+    <Branch Name="else" Sym="BBJDL-360">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-208&quot;)" Sym="BBJDL-363">
+      <Branch Name="else" Sym="BBJDL-364">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-367"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-365">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-208 \&quot;Yes\&quot; could not add as child; parent symbol=BBJDL-217 \&quot;IsSageTVServerEnabled()\&quot;&quot;)" Sym="BBJDL-366"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-361">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-217 \&quot;Yes\&quot; missing parent; could not add child with symbol=BBJDL-208 \&quot;IsSageTVServerEnabled()\&quot;&quot;)" Sym="BBJDL-362"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;BBJDL-218&quot;)" Sym="BBJDL-368">
+    <Branch Name="else" Sym="BBJDL-369">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;BBJDL-225&quot;)" Sym="BBJDL-372">
+      <Branch Name="else" Sym="BBJDL-373">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="BBJDL-376"/>
+      </Branch>
+      <Branch Name="null" Sym="BBJDL-374">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-225 \&quot;No\&quot; could not add as child; parent symbol=BBJDL-218 \&quot;CloseOptionsMenu()\&quot;&quot;)" Sym="BBJDL-375"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="BBJDL-370">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BBJDL-218 \&quot;No\&quot; missing parent; could not add child with symbol=BBJDL-225 \&quot;CloseOptionsMenu()\&quot;&quot;)" Sym="BBJDL-371"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="BBJDL-232"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="BBJDL-377"/>
+ </Hook>
+ <OptionsMenu Name="Confirm" Sym="BBJDL-215"/>
+ <Action Name="ServerRestart()" Sym="BBJDL-211"/>
+ <Action Name="Restart()" Sym="BBJDL-219"/>
+ <Action Name="CloseOptionsMenu()" Sym="BBJDL-225"/>
+ <Conditional Name="IsSageTVServerEnabled()" Sym="BBJDL-208"/>
+ <Branch Name="true" Sym="BBJDL-209"/>
+ <Branch Name="false" Sym="BBJDL-210"/>
+ <Item Name="Restart SageTV" Sym="BBJDL-207"/>
+ <Item Name="Yes" Sym="BBJDL-217"/>
+ <Item Name="No" Sym="BBJDL-218"/>
+ <Text Name="This action will restart SageTV.  Are you sure you want to do this?" Sym="BBJDL-222"/>
+ <Attribute Name="ButtonText" Sym="BBJDL-214">
+  <Value>"Restart SageTV"</Value>
+ </Attribute>
+ <Attribute Name="ThisItem" Sym="BBJDL-223">
+  <Value>"xItemSetupRestart"</Value>
+ </Attribute>
+ <Attribute Name="SubMenuType" Sym="BBJDL-224">
+  <Value>null</Value>
+ </Attribute>
+ <Panel Name="ConfirmPanel" Sym="BBJDL-216">
+  <Layout>VerticalGrid</Layout>
+  <WrapHNav>false</WrapHNav>
+  <WrapVNav>false</WrapVNav>
+  <IgnoreThemeProps>false</IgnoreThemeProps>
+  <BackgroundComponent>false</BackgroundComponent>
+  <MouseTransparency>false</MouseTransparency>
+ </Panel>
+</Module>
