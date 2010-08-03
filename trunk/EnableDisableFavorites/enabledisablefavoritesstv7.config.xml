@@ -1,0 +1,13 @@
+<config>
+   <setting name="ui/disabled_favorite_color" type="Text"> 
+     <label>Disabled Favorite Color</label>
+     <helptext>This is the color that will highlight disabled favorites.</helptext>
+     <default>OxFF0000</default>
+   </setting>
+   <setting name="ui/disabled_favorite_alpha" type="Integer"> 
+     <label>Disabled Favorite Alpha</label>
+     <helptext>This is the alpha setting for the highlight of disabled favorites. (0-255)</helptext>
+     <default>36</default>
+   </setting>
+</config>
+
