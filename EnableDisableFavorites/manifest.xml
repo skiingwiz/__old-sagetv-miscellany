@@ -17,13 +17,13 @@
 <PluginType>STVI</PluginType>
  <Package>
    <PackageType>STVI</PackageType>
-   <Location>http://sagetv-miscellany.googlecode.com/files/STV7-enable-disable-favorites-1.1.zip</Location>
+   <Location>http://sagetv-miscellany.googlecode.com/files/STV7-enable-disable-favorites-1.1.1.zip</Location>
    <MD5>27BC78B0A73766A6DE345B9226AFAFF6</MD5>
  </Package>
  <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10415&d=1275864335]]></Screenshot>
  <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10416&d=1275864346]]></Screenshot>
  <Webpage><![CDATA[http://forums.sagetv.com/forums/showthread.php?t=49021]]></Webpage>
-<STVImport>STV7-enable-disable-favorites-1.1.stvi</STVImport>
+<STVImport>STV7-enable-disable-favorites-1.1.1.stvi</STVImport>
 <ReleaseNotes>1.1.1 - Fix typo in default for Disabled Favorite Color
 1.1 - Update to allow GUI configuration of STVi properties
 1.0 - Initial Release for STV7
