@@ -4,8 +4,8 @@
  <Description><![CDATA[Allows series favorites to be enabled and disabled without removing them.]]> </Description>
  <Author>skiingwiz</Author>
  <CreationDate>2010.06.06</CreationDate>
- <ModificationDate>2010.08.02</ModificationDate>
- <Version>1.1</Version>
+ <ModificationDate>2010.08.07</ModificationDate>
+ <Version>1.1.1</Version>
  <Desktop>false</Desktop>
  <Dependency>
   <STV>SageTV7</STV>
@@ -18,13 +18,14 @@
  <Package>
    <PackageType>STVI</PackageType>
    <Location>http://sagetv-miscellany.googlecode.com/files/STV7-enable-disable-favorites-1.1.zip</Location>
-   <MD5>2F8AFC5E904632D60147142618B84A97</MD5>
+   <MD5>27BC78B0A73766A6DE345B9226AFAFF6</MD5>
  </Package>
  <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10415&d=1275864335]]></Screenshot>
  <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10416&d=1275864346]]></Screenshot>
  <Webpage><![CDATA[http://forums.sagetv.com/forums/showthread.php?t=49021]]></Webpage>
 <STVImport>STV7-enable-disable-favorites-1.1.stvi</STVImport>
-<ReleaseNotes>1.1 - Update to allow GUI configuration of STVi properties
+<ReleaseNotes>1.1.1 - Fix typo in default for Disabled Favorite Color
+1.1 - Update to allow GUI configuration of STVi properties
 1.0 - Initial Release for STV7
 </ReleaseNotes>
 </SageTVPlugin>
