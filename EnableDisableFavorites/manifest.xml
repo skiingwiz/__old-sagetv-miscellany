@@ -23,7 +23,7 @@
  <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10415&d=1275864335]]></Screenshot>
  <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10416&d=1275864346]]></Screenshot>
  <Webpage><![CDATA[http://forums.sagetv.com/forums/showthread.php?t=49021]]></Webpage>
-<STVImport>STV7-enable-disable-favorites-1.1.1.stvi</STVImport>
+<STVImport>STV7-enable-disable-favorites.stvi</STVImport>
 <ReleaseNotes>1.2 - Fix typo in default for Disabled Favorite Color
     - Remove version number from stvi file
 1.1 - Update to allow GUI configuration of STVi properties
