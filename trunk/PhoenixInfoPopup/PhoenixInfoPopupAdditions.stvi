@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="HOHDS-1086">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="HOHDS-1087"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="HOHDS-1088"/>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="HOHDS-1089">
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;PHNX-256288&quot;)" Sym="HOHDS-1129">
+    <Branch Name="else" Sym="HOHDS-1130">
+     <Action Name="SetWidgetProperty(Widg, &quot;FixedWidth&quot;, &quot;0.65&quot;)" Sym="HOHDS-1132"/>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1131">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-256288 could not change property FixedWidth from: \&quot;0.75\&quot; to: \&quot;0.65\&quot;&quot;)" Sym="HOHDS-1133"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="HOHDS-1090"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="HOHDS-1091">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;PHNX-256279&quot;)" Sym="HOHDS-1093">
+    <Branch Name="else" Sym="HOHDS-1094">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-1&quot;)" Sym="HOHDS-1097">
+      <Branch Name="else" Sym="HOHDS-1098">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1101"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1099">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1 \&quot;\&quot; could not add as child; parent symbol=PHNX-256279 \&quot;\&quot;&quot;)" Sym="HOHDS-1100"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1095">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-256279 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-1 \&quot;\&quot;&quot;)" Sym="HOHDS-1096"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;PHNX-256279&quot;)" Sym="HOHDS-1102">
+    <Branch Name="else" Sym="HOHDS-1103">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-38&quot;)" Sym="HOHDS-1106">
+      <Branch Name="else" Sym="HOHDS-1107">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1110"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1108">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-38 \&quot;\&quot; could not add as child; parent symbol=PHNX-256279 \&quot;\&quot;&quot;)" Sym="HOHDS-1109"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1104">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-256279 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-38 \&quot;\&quot;&quot;)" Sym="HOHDS-1105"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;PHNX-256279&quot;)" Sym="HOHDS-1111">
+    <Branch Name="else" Sym="HOHDS-1112">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-40&quot;)" Sym="HOHDS-1115">
+      <Branch Name="else" Sym="HOHDS-1116">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1119"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1117">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-40 \&quot;\&quot; could not add as child; parent symbol=PHNX-256279 \&quot;\&quot;&quot;)" Sym="HOHDS-1118"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1113">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-256279 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-40 \&quot;\&quot;&quot;)" Sym="HOHDS-1114"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;PHNX-256279&quot;)" Sym="HOHDS-1120">
+    <Branch Name="else" Sym="HOHDS-1121">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-42&quot;)" Sym="HOHDS-1124">
+      <Branch Name="else" Sym="HOHDS-1125">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1128"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1126">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-42 \&quot;\&quot; could not add as child; parent symbol=PHNX-256279 \&quot;\&quot;&quot;)" Sym="HOHDS-1127"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1122">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-256279 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-42 \&quot;\&quot;&quot;)" Sym="HOHDS-1123"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;PHNX-256301&quot;)" Sym="HOHDS-1134">
+    <Branch Name="else" Sym="HOHDS-1135">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-1083&quot;)" Sym="HOHDS-1138">
+      <Branch Name="else" Sym="HOHDS-1139">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1142"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1140">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1083 \&quot;Time Info\&quot; could not add as child; parent symbol=PHNX-256301 \&quot;IconRow\&quot;&quot;)" Sym="HOHDS-1141"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1136">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-256301 \&quot;Time Info\&quot; missing parent; could not add child with symbol=HOHDS-1083 \&quot;IconRow\&quot;&quot;)" Sym="HOHDS-1137"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-445&quot;)" Sym="HOHDS-1143">
+    <Branch Name="else" Sym="HOHDS-1144">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;PHNX-268619&quot;)" Sym="HOHDS-1147">
+      <Branch Name="else" Sym="HOHDS-1148">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1151"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1149">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHNX-268619 \&quot;WatchedMediaItem = MediaItem\&quot; could not add as child; parent symbol=HOHDS-445 \&quot;\&quot;REM Link here for the Watched Icon in media lists\&quot;\&quot;&quot;)" Sym="HOHDS-1150"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1145">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-445 \&quot;WatchedMediaItem = MediaItem\&quot; missing parent; could not add child with symbol=PHNX-268619 \&quot;\&quot;REM Link here for the Watched Icon in media lists\&quot;\&quot;&quot;)" Sym="HOHDS-1146"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-447&quot;)" Sym="HOHDS-1152">
+    <Branch Name="else" Sym="HOHDS-1153">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-448&quot;)" Sym="HOHDS-1156">
+      <Branch Name="else" Sym="HOHDS-1157">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1160"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1158">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-448 \&quot;DontLikeMediaItem = MediaItem\&quot; could not add as child; parent symbol=HOHDS-447 \&quot;\&quot;REM Link here for the Don't Like Icon in media lists\&quot;\&quot;&quot;)" Sym="HOHDS-1159"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1154">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-447 \&quot;DontLikeMediaItem = MediaItem\&quot; missing parent; could not add child with symbol=HOHDS-448 \&quot;\&quot;REM Link here for the Don't Like Icon in media lists\&quot;\&quot;&quot;)" Sym="HOHDS-1155"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-448&quot;)" Sym="HOHDS-1161">
+    <Branch Name="else" Sym="HOHDS-1162">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-449&quot;)" Sym="HOHDS-1165">
+      <Branch Name="else" Sym="HOHDS-1166">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1169"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1167">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-449 \&quot;\&quot;REM Link here for the Don't Like Icon in media lists\&quot;\&quot; could not add as child; parent symbol=HOHDS-448 \&quot;displayTheIcon = false\&quot;&quot;)" Sym="HOHDS-1168"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1163">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-448 \&quot;\&quot;REM Link here for the Don't Like Icon in media lists\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-449 \&quot;displayTheIcon = false\&quot;&quot;)" Sym="HOHDS-1164"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-449&quot;)" Sym="HOHDS-1170">
+    <Branch Name="else" Sym="HOHDS-1171">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-450&quot;)" Sym="HOHDS-1174">
+      <Branch Name="else" Sym="HOHDS-1175">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1178"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1176">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-450 \&quot;displayTheIcon = false\&quot; could not add as child; parent symbol=HOHDS-449 \&quot;showDLIcon = GetProperty(\&quot;phoenix/umb/showDontLikeIcon\&quot;, \&quot;NEVER\&quot;)\&quot;&quot;)" Sym="HOHDS-1177"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1172">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-449 \&quot;displayTheIcon = false\&quot; missing parent; could not add child with symbol=HOHDS-450 \&quot;showDLIcon = GetProperty(\&quot;phoenix/umb/showDontLikeIcon\&quot;, \&quot;NEVER\&quot;)\&quot;&quot;)" Sym="HOHDS-1173"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-450&quot;)" Sym="HOHDS-1179">
+    <Branch Name="else" Sym="HOHDS-1180">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-451&quot;)" Sym="HOHDS-1183">
+      <Branch Name="else" Sym="HOHDS-1184">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1187"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1185">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-451 \&quot;showDLIcon = GetProperty(\&quot;phoenix/umb/showDontLikeIcon\&quot;, \&quot;NEVER\&quot;)\&quot; could not add as child; parent symbol=HOHDS-450 \&quot;showDLIcon != \&quot;NEVER\&quot;\&quot;&quot;)" Sym="HOHDS-1186"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1181">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-450 \&quot;showDLIcon = GetProperty(\&quot;phoenix/umb/showDontLikeIcon\&quot;, \&quot;NEVER\&quot;)\&quot; missing parent; could not add child with symbol=HOHDS-451 \&quot;showDLIcon != \&quot;NEVER\&quot;\&quot;&quot;)" Sym="HOHDS-1182"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-452&quot;)" Sym="HOHDS-1188">
+    <Branch Name="else" Sym="HOHDS-1189">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-453&quot;)" Sym="HOHDS-1192">
+      <Branch Name="else" Sym="HOHDS-1193">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1196"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1194">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-453 \&quot;MediaType = \&quot;\&quot;\&quot; could not add as child; parent symbol=HOHDS-452 \&quot;\&quot;REM Figure out what kind of media we are dealing with\&quot;\&quot;&quot;)" Sym="HOHDS-1195"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1190">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-452 \&quot;MediaType = \&quot;\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-453 \&quot;\&quot;REM Figure out what kind of media we are dealing with\&quot;\&quot;&quot;)" Sym="HOHDS-1191"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-453&quot;)" Sym="HOHDS-1197">
+    <Branch Name="else" Sym="HOHDS-1198">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-454&quot;)" Sym="HOHDS-1201">
+      <Branch Name="else" Sym="HOHDS-1202">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1205"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1203">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-454 \&quot;\&quot;REM Figure out what kind of media we are dealing with\&quot;\&quot; could not add as child; parent symbol=HOHDS-453 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;FOLDER\&quot; )\&quot;&quot;)" Sym="HOHDS-1204"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1199">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-453 \&quot;\&quot;REM Figure out what kind of media we are dealing with\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-454 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;FOLDER\&quot; )\&quot;&quot;)" Sym="HOHDS-1200"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-456&quot;)" Sym="HOHDS-1206">
+    <Branch Name="else" Sym="HOHDS-1207">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1210">
+      <Branch Name="else" Sym="HOHDS-1211">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1214"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1212">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;MediaType = \&quot;FOLDER\&quot;\&quot; could not add as child; parent symbol=HOHDS-456 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1213"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1208">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-456 \&quot;MediaType = \&quot;FOLDER\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-465 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1209"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-458&quot;)" Sym="HOHDS-1215">
+    <Branch Name="else" Sym="HOHDS-1216">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-459&quot;)" Sym="HOHDS-1219">
+      <Branch Name="else" Sym="HOHDS-1220">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1223"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1221">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-459 \&quot;\&quot;REM Handle MediaItem based on type\&quot;\&quot; could not add as child; parent symbol=HOHDS-458 \&quot;true\&quot;&quot;)" Sym="HOHDS-1222"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1217">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-458 \&quot;\&quot;REM Handle MediaItem based on type\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-459 \&quot;true\&quot;&quot;)" Sym="HOHDS-1218"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-482&quot;)" Sym="HOHDS-1224">
+    <Branch Name="else" Sym="HOHDS-1225">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1228">
+      <Branch Name="else" Sym="HOHDS-1229">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1232"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1230">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;MediaType = \&quot;EPG_AIRING\&quot;\&quot; could not add as child; parent symbol=HOHDS-482 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1231"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1226">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-482 \&quot;MediaType = \&quot;EPG_AIRING\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-465 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1227"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-484&quot;)" Sym="HOHDS-1233">
+    <Branch Name="else" Sym="HOHDS-1234">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1237">
+      <Branch Name="else" Sym="HOHDS-1238">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1241"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1239">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;MediaType = \&quot;TV\&quot;\&quot; could not add as child; parent symbol=HOHDS-484 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1240"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1235">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-484 \&quot;MediaType = \&quot;TV\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-465 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1236"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-479&quot;)" Sym="HOHDS-1242">
+    <Branch Name="else" Sym="HOHDS-1243">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1246">
+      <Branch Name="else" Sym="HOHDS-1247">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1250"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1248">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;MediaType = \&quot;VIDEO\&quot;\&quot; could not add as child; parent symbol=HOHDS-479 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1249"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1244">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-479 \&quot;MediaType = \&quot;VIDEO\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-465 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1245"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-477&quot;)" Sym="HOHDS-1251">
+    <Branch Name="else" Sym="HOHDS-1252">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1255">
+      <Branch Name="else" Sym="HOHDS-1256">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1259"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1257">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;MediaType = \&quot;DVD\&quot;\&quot; could not add as child; parent symbol=HOHDS-477 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1258"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1253">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-477 \&quot;MediaType = \&quot;DVD\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-465 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1254"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-464&quot;)" Sym="HOHDS-1260">
+    <Branch Name="else" Sym="HOHDS-1261">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1264">
+      <Branch Name="else" Sym="HOHDS-1265">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1268"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1266">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;MediaType = \&quot;BLURAY\&quot;\&quot; could not add as child; parent symbol=HOHDS-464 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1267"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1262">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-464 \&quot;MediaType = \&quot;BLURAY\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-465 \&quot;showDLIcon\&quot;&quot;)" Sym="HOHDS-1263"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-468&quot;)" Sym="HOHDS-1269">
+    <Branch Name="else" Sym="HOHDS-1270">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-469&quot;)" Sym="HOHDS-1273">
+      <Branch Name="else" Sym="HOHDS-1274">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1277"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1275">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-469 \&quot;gDontLike\&quot; could not add as child; parent symbol=HOHDS-468 \&quot;\&quot;&quot;)" Sym="HOHDS-1276"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1271">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-468 \&quot;gDontLike\&quot; missing parent; could not add child with symbol=HOHDS-469 \&quot;\&quot;&quot;)" Sym="HOHDS-1272"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-2&quot;)" Sym="HOHDS-1278">
+    <Branch Name="else" Sym="HOHDS-1279">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;PHOENIX-4032&quot;)" Sym="HOHDS-1282">
+      <Branch Name="else" Sym="HOHDS-1283">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1286"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1284">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHOENIX-4032 \&quot;vfsItem=MediaItem\&quot; could not add as child; parent symbol=HOHDS-2 \&quot;\&quot;REM UMB vfsItem play\&quot;\&quot;&quot;)" Sym="HOHDS-1285"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1280">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-2 \&quot;vfsItem=MediaItem\&quot; missing parent; could not add child with symbol=PHOENIX-4032 \&quot;\&quot;REM UMB vfsItem play\&quot;\&quot;&quot;)" Sym="HOHDS-1281"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-39&quot;)" Sym="HOHDS-1287">
+    <Branch Name="else" Sym="HOHDS-1288">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;PHOENIX-3650&quot;)" Sym="HOHDS-1291">
+      <Branch Name="else" Sym="HOHDS-1292">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1295"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1293">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=PHOENIX-3650 \&quot;vfsItem=MediaItem\&quot; could not add as child; parent symbol=HOHDS-39 \&quot;\&quot;REM UMB vfsItem delete\&quot;\&quot;&quot;)" Sym="HOHDS-1294"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1289">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-39 \&quot;vfsItem=MediaItem\&quot; missing parent; could not add child with symbol=PHOENIX-3650 \&quot;\&quot;REM UMB vfsItem delete\&quot;\&quot;&quot;)" Sym="HOHDS-1290"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-451&quot;)" Sym="HOHDS-1296">
+    <Branch Name="else" Sym="HOHDS-1297">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-452&quot;)" Sym="HOHDS-1300">
+      <Branch Name="else" Sym="HOHDS-1301">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1304"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1302">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-452 \&quot;showDLIcon != \&quot;NEVER\&quot;\&quot; could not add as child; parent symbol=HOHDS-451 \&quot;MediaType = \&quot;\&quot;\&quot;&quot;)" Sym="HOHDS-1303"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1298">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-451 \&quot;showDLIcon != \&quot;NEVER\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-452 \&quot;MediaType = \&quot;\&quot;\&quot;&quot;)" Sym="HOHDS-1299"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-454&quot;)" Sym="HOHDS-1305">
+    <Branch Name="else" Sym="HOHDS-1306">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-455&quot;)" Sym="HOHDS-1309">
+      <Branch Name="else" Sym="HOHDS-1310">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1313"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1311">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-455 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;FOLDER\&quot; )\&quot; could not add as child; parent symbol=HOHDS-454 \&quot;true\&quot;&quot;)" Sym="HOHDS-1312"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1307">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-454 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;FOLDER\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-455 \&quot;true\&quot;&quot;)" Sym="HOHDS-1308"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-454&quot;)" Sym="HOHDS-1314">
+    <Branch Name="else" Sym="HOHDS-1315">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-457&quot;)" Sym="HOHDS-1318">
+      <Branch Name="else" Sym="HOHDS-1319">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1322"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1320">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-457 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;FOLDER\&quot; )\&quot; could not add as child; parent symbol=HOHDS-454 \&quot;else\&quot;&quot;)" Sym="HOHDS-1321"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1316">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-454 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;FOLDER\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-457 \&quot;else\&quot;&quot;)" Sym="HOHDS-1317"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1323">
+    <Branch Name="else" Sym="HOHDS-1324">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-466&quot;)" Sym="HOHDS-1327">
+      <Branch Name="else" Sym="HOHDS-1328">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1331"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1329">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-466 \&quot;showDLIcon\&quot; could not add as child; parent symbol=HOHDS-465 \&quot;\&quot;ALWAYS\&quot;\&quot;&quot;)" Sym="HOHDS-1330"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1325">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;showDLIcon\&quot; missing parent; could not add child with symbol=HOHDS-466 \&quot;\&quot;ALWAYS\&quot;\&quot;&quot;)" Sym="HOHDS-1326"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1332">
+    <Branch Name="else" Sym="HOHDS-1333">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-470&quot;)" Sym="HOHDS-1336">
+      <Branch Name="else" Sym="HOHDS-1337">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1340"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1338">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-470 \&quot;showDLIcon\&quot; could not add as child; parent symbol=HOHDS-465 \&quot;\&quot;TVONLY\&quot;\&quot;&quot;)" Sym="HOHDS-1339"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1334">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;showDLIcon\&quot; missing parent; could not add child with symbol=HOHDS-470 \&quot;\&quot;TVONLY\&quot;\&quot;&quot;)" Sym="HOHDS-1335"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-465&quot;)" Sym="HOHDS-1341">
+    <Branch Name="else" Sym="HOHDS-1342">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-473&quot;)" Sym="HOHDS-1345">
+      <Branch Name="else" Sym="HOHDS-1346">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1349"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1347">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-473 \&quot;showDLIcon\&quot; could not add as child; parent symbol=HOHDS-465 \&quot;\&quot;TVANDHOME\&quot;\&quot;&quot;)" Sym="HOHDS-1348"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1343">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-465 \&quot;showDLIcon\&quot; missing parent; could not add child with symbol=HOHDS-473 \&quot;\&quot;TVANDHOME\&quot;\&quot;&quot;)" Sym="HOHDS-1344"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-459&quot;)" Sym="HOHDS-1350">
+    <Branch Name="else" Sym="HOHDS-1351">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-460&quot;)" Sym="HOHDS-1354">
+      <Branch Name="else" Sym="HOHDS-1355">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1358"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1356">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-460 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-459 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot;&quot;)" Sym="HOHDS-1357"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1352">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-459 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-460 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot;&quot;)" Sym="HOHDS-1353"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-459&quot;)" Sym="HOHDS-1359">
+    <Branch Name="else" Sym="HOHDS-1360">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-461&quot;)" Sym="HOHDS-1363">
+      <Branch Name="else" Sym="HOHDS-1364">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1367"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1365">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-461 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-459 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;VIDEO\&quot; )\&quot;&quot;)" Sym="HOHDS-1366"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1361">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-459 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-461 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;VIDEO\&quot; )\&quot;&quot;)" Sym="HOHDS-1362"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-459&quot;)" Sym="HOHDS-1368">
+    <Branch Name="else" Sym="HOHDS-1369">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-462&quot;)" Sym="HOHDS-1372">
+      <Branch Name="else" Sym="HOHDS-1373">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1376"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1374">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-462 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-459 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;DVD\&quot; )\&quot;&quot;)" Sym="HOHDS-1375"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1370">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-459 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-462 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;DVD\&quot; )\&quot;&quot;)" Sym="HOHDS-1371"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-459&quot;)" Sym="HOHDS-1377">
+    <Branch Name="else" Sym="HOHDS-1378">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-463&quot;)" Sym="HOHDS-1381">
+      <Branch Name="else" Sym="HOHDS-1382">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1385"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1383">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-463 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-459 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;BLURAY\&quot; )\&quot;&quot;)" Sym="HOHDS-1384"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1379">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-459 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-463 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;BLURAY\&quot; )\&quot;&quot;)" Sym="HOHDS-1380"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-480&quot;)" Sym="HOHDS-1386">
+    <Branch Name="else" Sym="HOHDS-1387">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-481&quot;)" Sym="HOHDS-1390">
+      <Branch Name="else" Sym="HOHDS-1391">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1394"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1392">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-481 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;EPG_AIRING\&quot; )\&quot; could not add as child; parent symbol=HOHDS-480 \&quot;true\&quot;&quot;)" Sym="HOHDS-1393"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1388">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-480 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;EPG_AIRING\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-481 \&quot;true\&quot;&quot;)" Sym="HOHDS-1389"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-480&quot;)" Sym="HOHDS-1395">
+    <Branch Name="else" Sym="HOHDS-1396">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-483&quot;)" Sym="HOHDS-1399">
+      <Branch Name="else" Sym="HOHDS-1400">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1403"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1401">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-483 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;EPG_AIRING\&quot; )\&quot; could not add as child; parent symbol=HOHDS-480 \&quot;false\&quot;&quot;)" Sym="HOHDS-1402"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1397">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-480 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;EPG_AIRING\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-483 \&quot;false\&quot;&quot;)" Sym="HOHDS-1398"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-478&quot;)" Sym="HOHDS-1404">
+    <Branch Name="else" Sym="HOHDS-1405">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-479&quot;)" Sym="HOHDS-1408">
+      <Branch Name="else" Sym="HOHDS-1409">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1412"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1410">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-479 \&quot;!phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot; could not add as child; parent symbol=HOHDS-478 \&quot;MediaType = \&quot;VIDEO\&quot;\&quot;&quot;)" Sym="HOHDS-1411"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1406">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-478 \&quot;!phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-479 \&quot;MediaType = \&quot;VIDEO\&quot;\&quot;&quot;)" Sym="HOHDS-1407"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-467&quot;)" Sym="HOHDS-1413">
+    <Branch Name="else" Sym="HOHDS-1414">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-468&quot;)" Sym="HOHDS-1417">
+      <Branch Name="else" Sym="HOHDS-1418">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1421"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1419">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-468 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot; could not add as child; parent symbol=HOHDS-467 \&quot;gDontLike\&quot;&quot;)" Sym="HOHDS-1420"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1415">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-467 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot; missing parent; could not add child with symbol=HOHDS-468 \&quot;gDontLike\&quot;&quot;)" Sym="HOHDS-1416"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-471&quot;)" Sym="HOHDS-1422">
+    <Branch Name="else" Sym="HOHDS-1423">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-472&quot;)" Sym="HOHDS-1426">
+      <Branch Name="else" Sym="HOHDS-1427">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1430"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1428">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-472 \&quot;MediaType == \&quot;TV\&quot; || MediaType == \&quot;EPG_AIRING\&quot;\&quot; could not add as child; parent symbol=HOHDS-471 \&quot;true\&quot;&quot;)" Sym="HOHDS-1429"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1424">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-471 \&quot;MediaType == \&quot;TV\&quot; || MediaType == \&quot;EPG_AIRING\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-472 \&quot;true\&quot;&quot;)" Sym="HOHDS-1425"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-474&quot;)" Sym="HOHDS-1431">
+    <Branch Name="else" Sym="HOHDS-1432">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-475&quot;)" Sym="HOHDS-1435">
+      <Branch Name="else" Sym="HOHDS-1436">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1439"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1437">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-475 \&quot;MediaType == \&quot;HOMEVIDEO\&quot;\&quot; could not add as child; parent symbol=HOHDS-474 \&quot;true\&quot;&quot;)" Sym="HOHDS-1438"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1433">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-474 \&quot;MediaType == \&quot;HOMEVIDEO\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-475 \&quot;true\&quot;&quot;)" Sym="HOHDS-1434"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-474&quot;)" Sym="HOHDS-1440">
+    <Branch Name="else" Sym="HOHDS-1441">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-476&quot;)" Sym="HOHDS-1444">
+      <Branch Name="else" Sym="HOHDS-1445">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1448"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1446">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-476 \&quot;MediaType == \&quot;HOMEVIDEO\&quot;\&quot; could not add as child; parent symbol=HOHDS-474 \&quot;else\&quot;&quot;)" Sym="HOHDS-1447"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1442">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-474 \&quot;MediaType == \&quot;HOMEVIDEO\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-476 \&quot;else\&quot;&quot;)" Sym="HOHDS-1443"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-146&quot;)" Sym="HOHDS-1449">
+    <Branch Name="else" Sym="HOHDS-1450">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-147&quot;)" Sym="HOHDS-1453">
+      <Branch Name="else" Sym="HOHDS-1454">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1457"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1455">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-147 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot; could not add as child; parent symbol=HOHDS-146 \&quot;true\&quot;&quot;)" Sym="HOHDS-1456"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1451">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-146 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot; missing parent; could not add child with symbol=HOHDS-147 \&quot;true\&quot;&quot;)" Sym="HOHDS-1452"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-146&quot;)" Sym="HOHDS-1458">
+    <Branch Name="else" Sym="HOHDS-1459">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-148&quot;)" Sym="HOHDS-1462">
+      <Branch Name="else" Sym="HOHDS-1463">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1466"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1464">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-148 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot; could not add as child; parent symbol=HOHDS-146 \&quot;else\&quot;&quot;)" Sym="HOHDS-1465"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1460">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-146 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot; missing parent; could not add child with symbol=HOHDS-148 \&quot;else\&quot;&quot;)" Sym="HOHDS-1461"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-455&quot;)" Sym="HOHDS-1467">
+    <Branch Name="else" Sym="HOHDS-1468">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-456&quot;)" Sym="HOHDS-1471">
+      <Branch Name="else" Sym="HOHDS-1472">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1475"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1473">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-456 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-455 \&quot;MediaType = \&quot;FOLDER\&quot;\&quot;&quot;)" Sym="HOHDS-1474"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1469">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-455 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-456 \&quot;MediaType = \&quot;FOLDER\&quot;\&quot;&quot;)" Sym="HOHDS-1470"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-457&quot;)" Sym="HOHDS-1476">
+    <Branch Name="else" Sym="HOHDS-1477">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-458&quot;)" Sym="HOHDS-1480">
+      <Branch Name="else" Sym="HOHDS-1481">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1484"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1482">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-458 \&quot;else\&quot; could not add as child; parent symbol=HOHDS-457 \&quot;\&quot;REM Handle MediaItem based on type\&quot;\&quot;&quot;)" Sym="HOHDS-1483"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1478">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-457 \&quot;else\&quot; missing parent; could not add child with symbol=HOHDS-458 \&quot;\&quot;REM Handle MediaItem based on type\&quot;\&quot;&quot;)" Sym="HOHDS-1479"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-460&quot;)" Sym="HOHDS-1485">
+    <Branch Name="else" Sym="HOHDS-1486">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-480&quot;)" Sym="HOHDS-1489">
+      <Branch Name="else" Sym="HOHDS-1490">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1493"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1491">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-480 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot; could not add as child; parent symbol=HOHDS-460 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;EPG_AIRING\&quot; )\&quot;&quot;)" Sym="HOHDS-1492"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1487">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-460 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-480 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;EPG_AIRING\&quot; )\&quot;&quot;)" Sym="HOHDS-1488"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-481&quot;)" Sym="HOHDS-1494">
+    <Branch Name="else" Sym="HOHDS-1495">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-482&quot;)" Sym="HOHDS-1498">
+      <Branch Name="else" Sym="HOHDS-1499">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1502"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1500">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-482 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-481 \&quot;MediaType = \&quot;EPG_AIRING\&quot;\&quot;&quot;)" Sym="HOHDS-1501"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1496">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-481 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-482 \&quot;MediaType = \&quot;EPG_AIRING\&quot;\&quot;&quot;)" Sym="HOHDS-1497"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-483&quot;)" Sym="HOHDS-1503">
+    <Branch Name="else" Sym="HOHDS-1504">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-484&quot;)" Sym="HOHDS-1507">
+      <Branch Name="else" Sym="HOHDS-1508">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1511"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1509">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-484 \&quot;false\&quot; could not add as child; parent symbol=HOHDS-483 \&quot;MediaType = \&quot;TV\&quot;\&quot;&quot;)" Sym="HOHDS-1510"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1505">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-483 \&quot;false\&quot; missing parent; could not add child with symbol=HOHDS-484 \&quot;MediaType = \&quot;TV\&quot;\&quot;&quot;)" Sym="HOHDS-1506"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-461&quot;)" Sym="HOHDS-1512">
+    <Branch Name="else" Sym="HOHDS-1513">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-478&quot;)" Sym="HOHDS-1516">
+      <Branch Name="else" Sym="HOHDS-1517">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1520"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1518">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-478 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;VIDEO\&quot; )\&quot; could not add as child; parent symbol=HOHDS-461 \&quot;!phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot;&quot;)" Sym="HOHDS-1519"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1514">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-461 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;VIDEO\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-478 \&quot;!phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;TV\&quot; )\&quot;&quot;)" Sym="HOHDS-1515"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-462&quot;)" Sym="HOHDS-1521">
+    <Branch Name="else" Sym="HOHDS-1522">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-477&quot;)" Sym="HOHDS-1525">
+      <Branch Name="else" Sym="HOHDS-1526">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1529"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1527">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-477 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;DVD\&quot; )\&quot; could not add as child; parent symbol=HOHDS-462 \&quot;MediaType = \&quot;DVD\&quot;\&quot;&quot;)" Sym="HOHDS-1528"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1523">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-462 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;DVD\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-477 \&quot;MediaType = \&quot;DVD\&quot;\&quot;&quot;)" Sym="HOHDS-1524"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-463&quot;)" Sym="HOHDS-1530">
+    <Branch Name="else" Sym="HOHDS-1531">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-464&quot;)" Sym="HOHDS-1534">
+      <Branch Name="else" Sym="HOHDS-1535">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1538"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1536">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-464 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;BLURAY\&quot; )\&quot; could not add as child; parent symbol=HOHDS-463 \&quot;MediaType = \&quot;BLURAY\&quot;\&quot;&quot;)" Sym="HOHDS-1537"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1532">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-463 \&quot;phoenix_media_IsMediaType( DontLikeMediaItem , \&quot;BLURAY\&quot; )\&quot; missing parent; could not add child with symbol=HOHDS-464 \&quot;MediaType = \&quot;BLURAY\&quot;\&quot;&quot;)" Sym="HOHDS-1533"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-466&quot;)" Sym="HOHDS-1539">
+    <Branch Name="else" Sym="HOHDS-1540">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-1084&quot;)" Sym="HOHDS-1543">
+      <Branch Name="else" Sym="HOHDS-1544">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1547"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1545">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1084 \&quot;\&quot;ALWAYS\&quot;\&quot; could not add as child; parent symbol=HOHDS-466 \&quot;\&quot;REM Bug 152, after it's released change the if statement to: phoenix_media_IsDontLike( DontLikeMediaItem ) \&quot;\&quot;&quot;)" Sym="HOHDS-1546"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1541">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-466 \&quot;\&quot;ALWAYS\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-1084 \&quot;\&quot;REM Bug 152, after it's released change the if statement to: phoenix_media_IsDontLike( DontLikeMediaItem ) \&quot;\&quot;&quot;)" Sym="HOHDS-1542"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-466&quot;)" Sym="HOHDS-1548">
+    <Branch Name="else" Sym="HOHDS-1549">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-467&quot;)" Sym="HOHDS-1552">
+      <Branch Name="else" Sym="HOHDS-1553">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1556"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1554">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-467 \&quot;\&quot;ALWAYS\&quot;\&quot; could not add as child; parent symbol=HOHDS-466 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot;&quot;)" Sym="HOHDS-1555"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1550">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-466 \&quot;\&quot;ALWAYS\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-467 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot;&quot;)" Sym="HOHDS-1551"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-470&quot;)" Sym="HOHDS-1557">
+    <Branch Name="else" Sym="HOHDS-1558">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-471&quot;)" Sym="HOHDS-1561">
+      <Branch Name="else" Sym="HOHDS-1562">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1565"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1563">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-471 \&quot;\&quot;TVONLY\&quot;\&quot; could not add as child; parent symbol=HOHDS-470 \&quot;MediaType == \&quot;TV\&quot; || MediaType == \&quot;EPG_AIRING\&quot;\&quot;&quot;)" Sym="HOHDS-1564"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1559">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-470 \&quot;\&quot;TVONLY\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-471 \&quot;MediaType == \&quot;TV\&quot; || MediaType == \&quot;EPG_AIRING\&quot;\&quot;&quot;)" Sym="HOHDS-1560"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-472&quot;)" Sym="HOHDS-1566">
+    <Branch Name="else" Sym="HOHDS-1567">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-467&quot;)" Sym="HOHDS-1570">
+      <Branch Name="else" Sym="HOHDS-1571">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1574"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1572">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-467 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-472 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot;&quot;)" Sym="HOHDS-1573"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1568">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-472 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-467 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot;&quot;)" Sym="HOHDS-1569"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-473&quot;)" Sym="HOHDS-1575">
+    <Branch Name="else" Sym="HOHDS-1576">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-474&quot;)" Sym="HOHDS-1579">
+      <Branch Name="else" Sym="HOHDS-1580">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1583"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1581">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-474 \&quot;\&quot;TVANDHOME\&quot;\&quot; could not add as child; parent symbol=HOHDS-473 \&quot;MediaType == \&quot;HOMEVIDEO\&quot;\&quot;&quot;)" Sym="HOHDS-1582"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1577">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-473 \&quot;\&quot;TVANDHOME\&quot;\&quot; missing parent; could not add child with symbol=HOHDS-474 \&quot;MediaType == \&quot;HOMEVIDEO\&quot;\&quot;&quot;)" Sym="HOHDS-1578"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-475&quot;)" Sym="HOHDS-1584">
+    <Branch Name="else" Sym="HOHDS-1585">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-467&quot;)" Sym="HOHDS-1588">
+      <Branch Name="else" Sym="HOHDS-1589">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1592"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1590">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-467 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-475 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot;&quot;)" Sym="HOHDS-1591"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1586">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-475 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-467 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))\&quot;&quot;)" Sym="HOHDS-1587"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-476&quot;)" Sym="HOHDS-1593">
+    <Branch Name="else" Sym="HOHDS-1594">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-471&quot;)" Sym="HOHDS-1597">
+      <Branch Name="else" Sym="HOHDS-1598">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1601"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1599">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-471 \&quot;else\&quot; could not add as child; parent symbol=HOHDS-476 \&quot;MediaType == \&quot;TV\&quot; || MediaType == \&quot;EPG_AIRING\&quot;\&quot;&quot;)" Sym="HOHDS-1600"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1595">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-476 \&quot;else\&quot; missing parent; could not add child with symbol=HOHDS-471 \&quot;MediaType == \&quot;TV\&quot; || MediaType == \&quot;EPG_AIRING\&quot;\&quot;&quot;)" Sym="HOHDS-1596"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-147&quot;)" Sym="HOHDS-1602">
+    <Branch Name="else" Sym="HOHDS-1603">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-149&quot;)" Sym="HOHDS-1606">
+      <Branch Name="else" Sym="HOHDS-1607">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1610"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1608">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-149 \&quot;true\&quot; could not add as child; parent symbol=HOHDS-147 \&quot;ClearDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot;&quot;)" Sym="HOHDS-1609"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1604">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-147 \&quot;true\&quot; missing parent; could not add child with symbol=HOHDS-149 \&quot;ClearDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot;&quot;)" Sym="HOHDS-1605"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-148&quot;)" Sym="HOHDS-1611">
+    <Branch Name="else" Sym="HOHDS-1612">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-150&quot;)" Sym="HOHDS-1615">
+      <Branch Name="else" Sym="HOHDS-1616">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1619"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1617">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-150 \&quot;else\&quot; could not add as child; parent symbol=HOHDS-148 \&quot;SetDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot;&quot;)" Sym="HOHDS-1618"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1613">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-148 \&quot;else\&quot; missing parent; could not add child with symbol=HOHDS-150 \&quot;SetDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot;&quot;)" Sym="HOHDS-1614"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-1&quot;)" Sym="HOHDS-1620">
+    <Branch Name="else" Sym="HOHDS-1621">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-2&quot;)" Sym="HOHDS-1624">
+      <Branch Name="else" Sym="HOHDS-1625">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1628"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1626">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-2 \&quot;\&quot; could not add as child; parent symbol=HOHDS-1 \&quot;vfsItem=MediaItem\&quot;&quot;)" Sym="HOHDS-1627"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1622">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-2 \&quot;vfsItem=MediaItem\&quot;&quot;)" Sym="HOHDS-1623"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-38&quot;)" Sym="HOHDS-1629">
+    <Branch Name="else" Sym="HOHDS-1630">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-39&quot;)" Sym="HOHDS-1633">
+      <Branch Name="else" Sym="HOHDS-1634">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1637"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1635">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-39 \&quot;\&quot; could not add as child; parent symbol=HOHDS-38 \&quot;vfsItem=MediaItem\&quot;&quot;)" Sym="HOHDS-1636"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1631">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-38 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-39 \&quot;vfsItem=MediaItem\&quot;&quot;)" Sym="HOHDS-1632"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-40&quot;)" Sym="HOHDS-1638">
+    <Branch Name="else" Sym="HOHDS-1639">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-41&quot;)" Sym="HOHDS-1642">
+      <Branch Name="else" Sym="HOHDS-1643">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1646"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1644">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-41 \&quot;\&quot; could not add as child; parent symbol=HOHDS-40 \&quot;phoenix_media_SetWatched(MediaItem, !phoenix_media_IsWatched(MediaItem))\&quot;&quot;)" Sym="HOHDS-1645"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1640">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-40 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-41 \&quot;phoenix_media_SetWatched(MediaItem, !phoenix_media_IsWatched(MediaItem))\&quot;&quot;)" Sym="HOHDS-1641"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-40&quot;)" Sym="HOHDS-1647">
+    <Branch Name="else" Sym="HOHDS-1648">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-1085&quot;)" Sym="HOHDS-1651">
+      <Branch Name="else" Sym="HOHDS-1652">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1655"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1653">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1085 \&quot;\&quot; could not add as child; parent symbol=HOHDS-40 \&quot;RefreshArea(\&quot;IconRow\&quot;)\&quot;&quot;)" Sym="HOHDS-1654"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1649">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-40 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-1085 \&quot;RefreshArea(\&quot;IconRow\&quot;)\&quot;&quot;)" Sym="HOHDS-1650"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-42&quot;)" Sym="HOHDS-1656">
+    <Branch Name="else" Sym="HOHDS-1657">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-43&quot;)" Sym="HOHDS-1660">
+      <Branch Name="else" Sym="HOHDS-1661">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1664"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1662">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-43 \&quot;\&quot; could not add as child; parent symbol=HOHDS-42 \&quot;\&quot;REM Bug 152.  None of this other stuff would be necessary if it did. phoenix_media_SetDontLike(MediaItem, !phoenix_media_IsDontLike(MediaItem))\&quot;\&quot;&quot;)" Sym="HOHDS-1663"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1658">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-42 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-43 \&quot;\&quot;REM Bug 152.  None of this other stuff would be necessary if it did. phoenix_media_SetDontLike(MediaItem, !phoenix_media_IsDontLike(MediaItem))\&quot;\&quot;&quot;)" Sym="HOHDS-1659"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-42&quot;)" Sym="HOHDS-1665">
+    <Branch Name="else" Sym="HOHDS-1666">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-146&quot;)" Sym="HOHDS-1669">
+      <Branch Name="else" Sym="HOHDS-1670">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1673"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1671">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-146 \&quot;\&quot; could not add as child; parent symbol=HOHDS-42 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot;&quot;)" Sym="HOHDS-1672"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1667">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-42 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-146 \&quot;IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))\&quot;&quot;)" Sym="HOHDS-1668"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-42&quot;)" Sym="HOHDS-1674">
+    <Branch Name="else" Sym="HOHDS-1675">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-1085&quot;)" Sym="HOHDS-1678">
+      <Branch Name="else" Sym="HOHDS-1679">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1682"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1680">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1085 \&quot;\&quot; could not add as child; parent symbol=HOHDS-42 \&quot;RefreshArea(\&quot;IconRow\&quot;)\&quot;&quot;)" Sym="HOHDS-1681"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1676">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-42 \&quot;\&quot; missing parent; could not add child with symbol=HOHDS-1085 \&quot;RefreshArea(\&quot;IconRow\&quot;)\&quot;&quot;)" Sym="HOHDS-1677"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-444&quot;)" Sym="HOHDS-1683">
+    <Branch Name="else" Sym="HOHDS-1684">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-445&quot;)" Sym="HOHDS-1687">
+      <Branch Name="else" Sym="HOHDS-1688">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1691"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1689">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-445 \&quot;Watched\&quot; could not add as child; parent symbol=HOHDS-444 \&quot;WatchedMediaItem = MediaItem\&quot;&quot;)" Sym="HOHDS-1690"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1685">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-444 \&quot;Watched\&quot; missing parent; could not add child with symbol=HOHDS-445 \&quot;WatchedMediaItem = MediaItem\&quot;&quot;)" Sym="HOHDS-1686"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-446&quot;)" Sym="HOHDS-1692">
+    <Branch Name="else" Sym="HOHDS-1693">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-447&quot;)" Sym="HOHDS-1696">
+      <Branch Name="else" Sym="HOHDS-1697">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1700"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1698">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-447 \&quot;DontLike\&quot; could not add as child; parent symbol=HOHDS-446 \&quot;DontLikeMediaItem = MediaItem\&quot;&quot;)" Sym="HOHDS-1699"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1694">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-446 \&quot;DontLike\&quot; missing parent; could not add child with symbol=HOHDS-447 \&quot;DontLikeMediaItem = MediaItem\&quot;&quot;)" Sym="HOHDS-1695"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-1083&quot;)" Sym="HOHDS-1701">
+    <Branch Name="else" Sym="HOHDS-1702">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-444&quot;)" Sym="HOHDS-1705">
+      <Branch Name="else" Sym="HOHDS-1706">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1709"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1707">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-444 \&quot;IconRow\&quot; could not add as child; parent symbol=HOHDS-1083 \&quot;Watched\&quot;&quot;)" Sym="HOHDS-1708"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1703">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1083 \&quot;IconRow\&quot; missing parent; could not add child with symbol=HOHDS-444 \&quot;Watched\&quot;&quot;)" Sym="HOHDS-1704"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HOHDS-1083&quot;)" Sym="HOHDS-1710">
+    <Branch Name="else" Sym="HOHDS-1711">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HOHDS-446&quot;)" Sym="HOHDS-1714">
+      <Branch Name="else" Sym="HOHDS-1715">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HOHDS-1718"/>
+      </Branch>
+      <Branch Name="null" Sym="HOHDS-1716">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-446 \&quot;IconRow\&quot; could not add as child; parent symbol=HOHDS-1083 \&quot;DontLike\&quot;&quot;)" Sym="HOHDS-1717"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HOHDS-1712">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HOHDS-1083 \&quot;IconRow\&quot; missing parent; could not add child with symbol=HOHDS-446 \&quot;DontLike\&quot;&quot;)" Sym="HOHDS-1713"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="HOHDS-1092"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="HOHDS-1719"/>
+ </Hook>
+ <Action Name="WatchedMediaItem = MediaItem" Sym="HOHDS-445"/>
+ <Action Name="DontLikeMediaItem = MediaItem" Sym="HOHDS-447"/>
+ <Action Name="&quot;REM Link here for the Don't Like Icon in media lists&quot;" Sym="HOHDS-448"/>
+ <Action Name="displayTheIcon = false" Sym="HOHDS-449"/>
+ <Action Name="showDLIcon = GetProperty(&quot;phoenix/umb/showDontLikeIcon&quot;, &quot;NEVER&quot;)" Sym="HOHDS-450"/>
+ <Action Name="MediaType = &quot;&quot;" Sym="HOHDS-452"/>
+ <Action Name="&quot;REM Figure out what kind of media we are dealing with&quot;" Sym="HOHDS-453"/>
+ <Action Name="MediaType = &quot;FOLDER&quot;" Sym="HOHDS-456"/>
+ <Action Name="&quot;REM Handle MediaItem based on type&quot;" Sym="HOHDS-458"/>
+ <Action Name="MediaType = &quot;EPG_AIRING&quot;" Sym="HOHDS-482"/>
+ <Action Name="MediaType = &quot;TV&quot;" Sym="HOHDS-484"/>
+ <Action Name="MediaType = &quot;VIDEO&quot;" Sym="HOHDS-479"/>
+ <Action Name="MediaType = &quot;DVD&quot;" Sym="HOHDS-477"/>
+ <Action Name="MediaType = &quot;BLURAY&quot;" Sym="HOHDS-464"/>
+ <Action Name="gDontLike" Sym="HOHDS-468"/>
+ <Action Name="vfsItem=MediaItem" Sym="HOHDS-2"/>
+ <Action Name="vfsItem=MediaItem" Sym="HOHDS-39"/>
+ <Action Name="phoenix_media_SetWatched(MediaItem, !phoenix_media_IsWatched(MediaItem))" Sym="HOHDS-41"/>
+ <Action Name="&quot;REM Bug 152.  None of this other stuff would be necessary if it did. phoenix_media_SetDontLike(MediaItem, !phoenix_media_IsDontLike(MediaItem))&quot;" Sym="HOHDS-43"/>
+ <Action Name="&quot;REM Bug 152, after it's released change the if statement to: phoenix_media_IsDontLike( DontLikeMediaItem ) &quot;" Sym="HOHDS-1084"/>
+ <Action Name="RefreshArea(&quot;IconRow&quot;)" Sym="HOHDS-1085"/>
+ <Conditional Name="showDLIcon != &quot;NEVER&quot;" Sym="HOHDS-451"/>
+ <Conditional Name="phoenix_media_IsMediaType( DontLikeMediaItem , &quot;FOLDER&quot; )" Sym="HOHDS-454"/>
+ <Conditional Name="showDLIcon" Sym="HOHDS-465"/>
+ <Conditional Name="true" Sym="HOHDS-459"/>
+ <Conditional Name="phoenix_media_IsMediaType( DontLikeMediaItem , &quot;EPG_AIRING&quot; )" Sym="HOHDS-480"/>
+ <Conditional Name="!phoenix_media_IsMediaType( DontLikeMediaItem , &quot;TV&quot; )" Sym="HOHDS-478"/>
+ <Conditional Name="IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(DontLikeMediaItem))" Sym="HOHDS-467"/>
+ <Conditional Name="MediaType == &quot;TV&quot; || MediaType == &quot;EPG_AIRING&quot;" Sym="HOHDS-471"/>
+ <Conditional Name="MediaType == &quot;HOMEVIDEO&quot;" Sym="HOHDS-474"/>
+ <Conditional Name="IsDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))" Sym="HOHDS-146"/>
+ <Conditional Name="ClearDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))" Sym="HOHDS-149"/>
+ <Conditional Name="SetDontLike(sagex_phoenix_vfs_IMediaResource_getMediaObject(MediaItem))" Sym="HOHDS-150"/>
+ <Branch Name="true" Sym="HOHDS-455"/>
+ <Branch Name="else" Sym="HOHDS-457"/>
+ <Branch Name="phoenix_media_IsMediaType( DontLikeMediaItem , &quot;TV&quot; )" Sym="HOHDS-460"/>
+ <Branch Name="true" Sym="HOHDS-481"/>
+ <Branch Name="false" Sym="HOHDS-483"/>
+ <Branch Name="phoenix_media_IsMediaType( DontLikeMediaItem , &quot;VIDEO&quot; )" Sym="HOHDS-461"/>
+ <Branch Name="phoenix_media_IsMediaType( DontLikeMediaItem , &quot;DVD&quot; )" Sym="HOHDS-462"/>
+ <Branch Name="phoenix_media_IsMediaType( DontLikeMediaItem , &quot;BLURAY&quot; )" Sym="HOHDS-463"/>
+ <Branch Name="&quot;ALWAYS&quot;" Sym="HOHDS-466"/>
+ <Branch Name="&quot;TVONLY&quot;" Sym="HOHDS-470"/>
+ <Branch Name="true" Sym="HOHDS-472"/>
+ <Branch Name="&quot;TVANDHOME&quot;" Sym="HOHDS-473"/>
+ <Branch Name="true" Sym="HOHDS-475"/>
+ <Branch Name="else" Sym="HOHDS-476"/>
+ <Branch Name="true" Sym="HOHDS-147"/>
+ <Branch Name="else" Sym="HOHDS-148"/>
+ <Listener Name="" Sym="HOHDS-1">
+  <ListenerEvent>Play</ListenerEvent>
+ </Listener>
+ <Listener Name="" Sym="HOHDS-38">
+  <ListenerEvent>Delete</ListenerEvent>
+ </Listener>
+ <Listener Name="" Sym="HOHDS-40">
+  <ListenerEvent>Watched</ListenerEvent>
+ </Listener>
+ <Listener Name="" Sym="HOHDS-42">
+  <ListenerEvent>Don't Like</ListenerEvent>
+ </Listener>
+ <Image Name="" Sym="HOHDS-469">
+  <File>=gMarkerWatched</File>
+  <PreserveAspectRatio>true</PreserveAspectRatio>
+  <ResizeImage>true</ResizeImage>
+  <AutoRepeatAction>false</AutoRepeatAction>
+  <BackgroundComponent>false</BackgroundComponent>
+  <MouseTransparency>false</MouseTransparency>
+  <CropToFill>false</CropToFill>
+  <ScaleDiffuse>false</ScaleDiffuse>
+  <BGLoad>false</BGLoad>
+ </Image>
+ <Panel Name="Watched" Sym="HOHDS-444">
+  <WrapHNav>false</WrapHNav>
+  <WrapVNav>false</WrapVNav>
+  <IgnoreThemeProps>false</IgnoreThemeProps>
+  <BackgroundComponent>false</BackgroundComponent>
+  <MouseTransparency>false</MouseTransparency>
+ </Panel>
+ <Panel Name="DontLike" Sym="HOHDS-446">
+  <WrapHNav>false</WrapHNav>
+  <WrapVNav>false</WrapVNav>
+  <IgnoreThemeProps>false</IgnoreThemeProps>
+  <BackgroundComponent>false</BackgroundComponent>
+  <MouseTransparency>false</MouseTransparency>
+ </Panel>
+ <Panel Name="IconRow" Sym="HOHDS-1083">
+  <Layout>Horizontal</Layout>
+  <WrapHNav>false</WrapHNav>
+  <WrapVNav>false</WrapVNav>
+  <IgnoreThemeProps>false</IgnoreThemeProps>
+  <BackgroundComponent>false</BackgroundComponent>
+  <MouseTransparency>false</MouseTransparency>
+ </Panel>
+</Module>

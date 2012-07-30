@@ -1,0 +1,35 @@
+<SageTVPlugin>
+ <Name>Phoenix Info Menu Additions</Name>
+ <Identifier>PhoenixInfoMenuAdditions</Identifier>
+ <Description><![CDATA[Makes several changes to the Info Button Popup Menu
+- Adds Play, Delete, Watched, Don't Like handlers to media items
+- Adds Watched and Don't Like icons
+]]> </Description>
+ <Author>skiingwiz</Author>
+ <CreationDate>2012.07.26</CreationDate>
+ <ModificationDate>2012.07.26</ModificationDate>
+ <Version>1.0</Version>
+ <Desktop>false</Desktop>
+ <Dependency>
+  <STV>Phoenix</STV>
+  <MinVersion>409</MinVersion>
+ </Dependency>
+<PluginType>STVI</PluginType>
+ <Package>
+   <PackageType>STVI</PackageType>
+   <Location>http://sagetv-miscellany.googlecode.com/files/PhoenixInfoPopupAdditions-1.0.zip</Location>
+   <MD5>415D2D584FA60C8EDFE5895A5A2E2E9C</MD5>
+ </Package>
+ <Package>
+   <PackageType>System</PackageType>
+   <Location>http://sagetv-miscellany.googlecode.com/files/PhoenixInfoPopupAdditions-settings-1.0.zip</Location>
+   <MD5>783408E85F925B4A6C1FFD446A0FA713</MD5>
+ </Package>
+ <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10415&d=1275864335]]></Screenshot>
+ <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10416&d=1275864346]]></Screenshot>
+ <Webpage><![CDATA[http://forums.sagetv.com/forums/showthread.php?t=49021]]></Webpage>
+<STVImport>PhoenixInfoPopupAdditions.stvi</STVImport>
+<ReleaseNotes>1.0 - Initial Release
+</ReleaseNotes>
+</SageTVPlugin>
+

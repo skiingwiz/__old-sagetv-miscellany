@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Configuration</description>
+      <group path="phoenix/umb" label="Universal Media Browser Options">
+            <description>UMB Settings</description>
+            <field key="showDontLikeIcon" label="Show Don't Like Icon in Lists" defaultValue="NEVER" type="choice">
+                  <description>Determines when the don't like icon is displayed in lists of media items.</description>
+                  <options>
+                        <option name="Never" value="NEVER"/>
+                        <option name="TV Only" value="TVONLY"/>
+                        <option name="TV and Home Videos" value="TVANDHOME"/>
+                        <option name="Always" value="ALWAYS"/>
+                  </options>
+            </field>
+      </group>
+</configuration>
