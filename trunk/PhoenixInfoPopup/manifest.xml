@@ -6,8 +6,8 @@
 - Adds Watched and Don't Like icons
 ]]> </Description>
  <Author>skiingwiz</Author>
- <CreationDate>2012.07.26</CreationDate>
- <ModificationDate>2012.07.26</ModificationDate>
+ <CreationDate>2012.08.01</CreationDate>
+ <ModificationDate>2012.08.01</ModificationDate>
  <Version>1.0</Version>
  <Desktop>false</Desktop>
  <Dependency>
@@ -25,9 +25,7 @@
    <Location>http://sagetv-miscellany.googlecode.com/files/PhoenixInfoPopupAdditions-settings-1.0.zip</Location>
    <MD5>783408E85F925B4A6C1FFD446A0FA713</MD5>
  </Package>
- <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10415&d=1275864335]]></Screenshot>
- <Screenshot><![CDATA[http://forums.sagetv.com/forums/attachment.php?attachmentid=10416&d=1275864346]]></Screenshot>
- <Webpage><![CDATA[http://forums.sagetv.com/forums/showthread.php?t=49021]]></Webpage>
+ <Webpage><![CDATA[http://forums.sagetv.com/forums/showthread.php?t=535525]]></Webpage>
 <STVImport>PhoenixInfoPopupAdditions.stvi</STVImport>
 <ReleaseNotes>1.0 - Initial Release
 </ReleaseNotes>
