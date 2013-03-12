@@ -4,6 +4,7 @@ public class Series {
 	private String id;
 	private String language;
 	private String name;
+	private String originalName;
 	private String bannerLocation;
 	private String description;
 	private String firstAirDate;
@@ -17,9 +18,9 @@ public class Series {
 	private String airTime;
 	private String airDay;
 	private String[] actors;
-	
+
 	public Series() {}
-	
+
 	public Series(String bannerLocation, String description,
 			String firstAirDate, String id, String imdbId, String language,
 			String name, String zap2itId) {
@@ -44,6 +45,10 @@ public class Series {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getOriginalName() {
+	    return originalName;
 	}
 
 	public String getBannerLocation() {
@@ -76,6 +81,10 @@ public class Series {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setOriginalName(String originalName) {
+	    this.originalName = originalName;
 	}
 
 	public void setBannerLocation(String bannerLocation) {
@@ -119,7 +128,7 @@ public class Series {
 	}
 
 	public void setNetwork(String network) {
-		this.network = network;	
+		this.network = network;
 	}
 
 	public void setStarRating(String rating) {
@@ -164,5 +173,5 @@ public class Series {
 
 	public String[] getActors() {
 		return actors;
-	}	
+	}
 }

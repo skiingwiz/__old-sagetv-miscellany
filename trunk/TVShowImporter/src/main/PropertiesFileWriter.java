@@ -5,19 +5,19 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import util.TextFileWriter;
 import data.Episode;
 import data.Series;
+import util.TextFileWriter;
 
 
 public class PropertiesFileWriter {
-	/** The separator used between items for properties that support 
-	 * multiple entries 
+	/** The separator used between items for properties that support
+	 * multiple entries
 	 */
 	public static final String ITEM_SERPARATOR = ";";
 	public static final String MAP_SEPARATOR = ":";
 	public static final String FILE_ENDING = ".properties";
-	
+
 	public static final String TITLE = "Title";
 	public static final String ALBUM = "Album";
 	public static final String ARTIST = "Artist";
@@ -51,30 +51,31 @@ public class PropertiesFileWriter {
 	public static final String HOST = "Host";
 	public static final String EXECUTIVE_PRODUCER = "Executive\\ Producer";
 	private static final String ORIGINAL_AIR_DATE = "OriginalAirDate";
-	private static final String EPISODE_TITLE = "EpisodeTitle";
+	private static final String EPISODE_TITLE = "EpisodeName";
 	private static final String SEASON_NUMBER = "SeasonNumber";
 	private static final String EPISODE_NUMBER = "EpisodeNumber";
 	private static final String MEDIA_TYPE = "MediaType";
 	private static final String MEDIA_TITLE= "MediaTitle";
-	
+
 	private static final String X_ORIGINAL_FILE = "x-OriginalFileName";
 	private static final String X_GENERATOR = "x-Generator";
-	
+    private static final String TVDB_ID = "x-tvdb-id";
+
 	private static final DateFormat YEAR_FORMAT = new SimpleDateFormat("yyyy");
 	private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
-	
-	 
-	
+
+
 	public void writeFile(File videoFile, Episode e) throws IOException {
 		//Example of correct properties file naming:
 		// Video file: Movie.avi
 		// Properties file: Movie.avi.properties
 		//This is different than other conventions in Sage, so be careful
-		String filename = videoFile.getPath() + FILE_ENDING;
+
+	    String filename = videoFile.getPath() + FILE_ENDING;
 		TextFileWriter out = new TextFileWriter(filename);
 
-		String title = formatTitle(e);
-		out.print(TITLE).print(MAP_SEPARATOR).println(title);
+/*		String title = formatTitle(e);
+		out.print(TITLE).print(MAP_SEPARATOR).println(title);*/
 		String desc = e.getDescription();
 		if(desc != null) {
 			desc = desc.replaceAll("\n", "");
@@ -82,57 +83,51 @@ public class PropertiesFileWriter {
 			out.print(DESCRIPTION).print(MAP_SEPARATOR).println(desc);
 		}
 
-		out.print(MEDIA_TITLE).print(MAP_SEPARATOR).println(e.getSeries().getName());
+		out.print(MEDIA_TITLE).print(MAP_SEPARATOR).println(e.getSeries().getOriginalName());
+		out.print(TITLE).print(MAP_SEPARATOR).println(e.getSeries().getName());
 		out.print(EPISODE_TITLE).print(MAP_SEPARATOR).println(e.getEpisodeTitle());
 		out.print(SEASON_NUMBER).print(MAP_SEPARATOR).println(e.getSeasonNum());
 		out.print(EPISODE_NUMBER).print(MAP_SEPARATOR).println(e.getEpisodeNum());
-		
+
 		Date firstAir = e.getFirstAirDate();
 		if(firstAir != null) {
 			out.print(YEAR).print(MAP_SEPARATOR).println(YEAR_FORMAT.format(firstAir));
 			out.print(ORIGINAL_AIR_DATE).print(MAP_SEPARATOR).println(DATE_FORMAT.format(firstAir));
 		}
-		
+
 		writeArray(out, WRITER, e.getWriters());
 		writeArray(out, GUEST_STAR, e.getGuestStars());
-		
+		out.print(MEDIA_TYPE).print(MAP_SEPARATOR).println("TV");
+
 		Series s = e.getSeries();
 		if(s != null) {
 			writeArray(out, GENRE, s.getGenre());
 			writeArray(out, ACTOR, s.getActors());
 			if(s.getContentRating() != null)
 				out.print(RATED).print(MAP_SEPARATOR).println(s.getContentRating());
-			
+
+			out.print(TVDB_ID).print(MAP_SEPARATOR).println(s.getId());
 			//Don't output running time.  Sage takes that as the time of the video,
 			//which it isn't (since the video has commercials removed).  This causes
 			//Sage to be inaccurate in it's determination of when to mark things
 			//as watched automatically
 			//out.print(RUNNING_TIME).print(MAP_SEPARATOR).println(s.getRuntime());
 		}
-		
-		out.print(MEDIA_TYPE).print(MAP_SEPARATOR).println("TV");
+
+		//TODO BMT Web makes it look like I can add series/season premeire/finale, so do that
 		out.print(X_ORIGINAL_FILE).print(MAP_SEPARATOR).println(e.getOriginalFile());
 		out.print(X_GENERATOR).print(MAP_SEPARATOR).println(Version.getFullNameVersion());
 		out.close();
 	}
-	
+
 	private void writeArray(TextFileWriter out, String property, String[] arr) {
 		if(arr != null && arr.length > 0){
 			StringBuffer sb = new StringBuffer();
 			for(String s : arr) {
 				sb.append(s).append(ITEM_SERPARATOR);
 			}
-			
+
 			out.print(property).print(MAP_SEPARATOR).println(sb.toString());
 		}
-	}
-
-	//TODO option for specifying title format
-	private String formatTitle(Episode e) {
-		/*int num = (e.getSeasonNum() * 100) + e.getEpisodeNum();
-		DecimalFormat df = new DecimalFormat("#000");
-		return df.format(num) + " " + e.getEpisodeTitle();
-		*/
-		return e.getEpisodeTitle();
 	}
 }

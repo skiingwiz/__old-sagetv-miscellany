@@ -1,0 +1,141 @@
+<project name="tv-file-processor" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<property name="src.dir" value="src" />
+	<property name="out.dir" value="out" />
+	<property name="class.dir" value="${out.dir}/classes" />
+
+	<property name="jar.name" value="${ant.project.name}.jar" />
+
+	<property name="ivy.install.version" value="2.3.0" />
+	<property name="ivy.home" value="${user.home}/.ant" />
+	<property name="ivy.jar.dir" value="${ivy.home}/lib" />
+	<property name="ivy.jar.file" value="${ivy.jar.dir}/ivy-${ivy.install.version}.jar" />
+
+	<!-- = = = = = = = = = = = = = = = = =
+          macrodef: load-version
+          Do this in a separate macro instead of just at the top of the build file so that the properties can be
+          modified (by the inc-version target) before they are loaded          
+         = = = = = = = = = = = = = = = = = -->
+	<macrodef name="load-version">
+		<sequential>
+			<property file="buildinfo.properties" />
+			<property name="build.number" value="${build.major.number}.${build.minor.number}.${build.revision.number}" />
+		</sequential>
+	</macrodef>
+
+	<!-- =================================
+          target: inc-version
+          This is a separate target so that the properties file can be modified before it is loaded.
+         ================================= -->
+	<target name="inc-version">
+		<sequential>
+			<propertyfile file="buildinfo.properties">
+				<entry key="build.major.number" type="int" default="1" pattern="0" />
+				<entry key="build.minor.number" type="int" default="0" pattern="0" />
+				<entry key="build.revision.number" type="int" operation="+" value="1" pattern="##0" />
+			</propertyfile>
+
+			<!--load-version /-->
+		</sequential>
+	</target>
+
+
+	<target name="download-ivy">
+		<mkdir dir="${ivy.jar.dir}" />
+
+		<delete dir="${ivy.jar.dir}" includes="ivy*.jar" failonerror="false" verbose="true" />
+
+		<!-- download Ivy from web site so that it can be used even without any special installation -->
+		<get src="http://www.apache.org/dist/ant/ivy/${ivy.install.version}/apache-ivy-${ivy.install.version}-bin.zip" dest="${ivy.jar.dir}/ivy.zip" usetimestamp="true" />
+		<unzip dest="${ivy.jar.dir}" src="${ivy.jar.dir}/ivy.zip">
+			<patternset includes="**/ivy*.jar" />
+			<mapper type="flatten" />
+		</unzip>
+	</target>
+
+	<target name="init-ivy" depends="download-ivy">
+		<!-- try to load ivy here from ivy home, in case the user has not already dropped
+              it into ant's lib dir (note that the latter copy will always take precedence).
+              We will not fail as long as local lib dir exists (it may be empty) and
+              ivy is in at least one of ant's lib dir or the local lib dir. -->
+		<path id="ivy.lib.path">
+			<fileset dir="${ivy.jar.dir}" includes="*.jar" />
+		</path>
+		<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
+	</target>
+
+
+	<!-- ================================= 
+	          target: clean
+	         ================================= -->
+	<target name="clean" description="Remove all build artifacts">
+		<delete dir="${out.dir}" failonerror="false" />
+	</target>
+
+	<!-- ================================= 
+	          target: build
+	         ================================= -->
+	<target name="build" depends="init-ivy" description="Compile the source code">
+		<load-version />
+
+		<mkdir dir="${out.dir}" />
+		<mkdir dir="${class.dir}" />
+
+		<copydir dest="${out.dir}/src" src="${src.dir}" />
+
+		<replace file="${out.dir}/src/main/Version.java" token="@@VERSION@@" value="${build.number}" />
+
+		<ivy:retrieve />
+		<ivy:cachepath pathid="ivy.classpath" conf="compile" />
+
+		<javac target="1.6" source="1.6" srcdir="${out.dir}/src" destdir="${class.dir}" classpathref="ivy.classpath" includeantruntime="false">
+		</javac>
+	</target>
+
+	<!-- ================================= 
+	          target: test
+	         ================================= -->
+	<target name="test" depends="build" description="Run all unit tests">
+		<!-- TODO make testing work -->
+	</target>
+
+	<!-- ================================= 
+	          target: jar
+	         ================================= -->
+	<target name="jar" depends="build" description="Create the JAR of class files">
+		<tstamp>
+			<format property="build.time" pattern="dd-MMM-yyyy HH:mm:ss" />
+		</tstamp>
+		<jar destfile="${out.dir}/${jar.name}">
+			<fileset dir="${class.dir}" />
+
+			<manifest>
+				<attribute name="Main-Class" value="main.Main" />
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Built-At" value="${build.time}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- ================================= 
+          target: package              
+         ================================= -->
+	<target name="package" depends="inc-version, jar" description="Create the zip file to package this for deployment">
+		<load-version />
+
+		<copy todir="${out.dir}">
+			<fileset dir="scripts" />
+		</copy>
+
+		<replace dir="${out.dir}">
+			<include name="*.bat" />
+			<replacefilter token="@@jar.name@@" value="${jar.name}" />
+		</replace>
+
+		<zip destfile="${out.dir}/${ant.project.name}-${build.number}.zip">
+			<fileset dir="${out.dir}">
+				<exclude name="classes/**" />
+			</fileset>
+		</zip>
+	</target>
+
+</project>

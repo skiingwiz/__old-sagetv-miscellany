@@ -15,17 +15,15 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.zip.GZIPInputStream;
 
 import javax.imageio.ImageIO;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import main.GlobalConfig;
 
 import org.xml.sax.SAXException;
 
-import util.io.IterableBufferedReader;
-import util.math.RandomUtil;
 import data.Banner;
 import data.Episode;
 import data.Series;
@@ -37,23 +35,26 @@ import db.thetvdb.xml.BaseSeriesXmlHandler;
 import db.thetvdb.xml.EpisodeXmlHandler;
 import db.thetvdb.xml.MirrorXmlHandler;
 import db.thetvdb.xml.SeriesXmlHandler;
+import main.GlobalConfig;
+import util.io.IterableBufferedReader;
 
 
 public class TheTvDbDatabase {
+    private static final String BASE_URL = "http://thetvdb.com";
 	private static final String CACHE_DIR = "cache/";
-	private static final String API_KEY = "3D94331EFB6E696C";	
+	private static final String API_KEY = "3D94331EFB6E696C";
 	private static final String MIRROR_FILE_URL = "http://www.thetvdb.com/api/" + API_KEY + "/mirrors.xml";
 	private static final String LOCAL_MIRROR_FILE = "mirrors.xml";
 	private static final String SERIES_ID_FILE = "series_ids.dat";
-	
+
 	private List<Mirror> mirrors;
 	private Properties seriesIds;
 	private String lang;
-	
+
 	public TheTvDbDatabase(String lang) {
 		this.lang = lang;
 	}
-	
+
 	public static void clearCaches() {
 		File cacheDir = new File(CACHE_DIR);
 		if(cacheDir.exists()) {
@@ -63,7 +64,7 @@ public class TheTvDbDatabase {
 			}
 		}
 	}
-	
+
 	public void initialize() throws DatabaseInitializationException {
 		File cacheDir = new File(CACHE_DIR);
 		if(!cacheDir.exists()) {
@@ -71,11 +72,11 @@ public class TheTvDbDatabase {
 				throw new DatabaseInitializationException("Faile to create cache directory: " + CACHE_DIR);
 			}
 		}
-		
+
 		File mirrorList = new File(CACHE_DIR + LOCAL_MIRROR_FILE);
-		
-		if(!mirrorList.exists() || 
-	       (System.currentTimeMillis() - mirrorList.lastModified() > 
+
+		if(!mirrorList.exists() ||
+	       (System.currentTimeMillis() - mirrorList.lastModified() >
 	       GlobalConfig.getOptions().getLong(GlobalConfig.MIRROR_FILE_LIFE))) {
 			try {
 				getMirrorList();
@@ -87,28 +88,28 @@ public class TheTvDbDatabase {
 				}
 			}
 		}
-		
+
 		try {
 			parseMirrors();
 		} catch (Exception e) {
 			throw new DatabaseInitializationException("Failed to parse mirrors file.", e);
 		}
 	}
-	
+
 	public List<Banner> getBannerInfo(String series) throws DatabaseProcessingException {
 		String seriesId = getSeriesId(series);
-	
+
 		StringBuffer urlPath = new StringBuffer();
-		urlPath.append(randomMirror(Mirror.XML_MIRROR_MASK).getPath()).append("/api/");
+		urlPath.append(BASE_URL).append("/api/");
 		urlPath.append(API_KEY).append("/series/").append(seriesId).append("/banners.xml");
-		
+
 		URL bannerUrl;
 		try {
 			bannerUrl = new URL(urlPath.toString());
 		} catch (MalformedURLException e) {
 			throw new DatabaseProcessingException("Could not retrieve series information.  Bad Url.  URL:" + urlPath.toString(), e);
 		}
-		
+
 		List<Banner> banners = new ArrayList<Banner>();
 		try {
 			SAXParserFactory.newInstance().newSAXParser().parse(
@@ -116,27 +117,27 @@ public class TheTvDbDatabase {
 		} catch (Exception e) {
 			throw new DatabaseProcessingException("Could not retrieve episode information.  Error:" + e.getMessage(), e);
 		}
-		
+
 		return banners;
 	}
-	
+
 	public void downloadBanner(Banner banner, String dir) throws DatabaseProcessingException {
 		StringBuffer urlPath = new StringBuffer();
-		urlPath.append(randomMirror(Mirror.XML_MIRROR_MASK).getPath()).append("/banners/");
+		urlPath.append(BASE_URL).append("/banners/");
 		urlPath.append(banner.getBannerPath());
-		
+
 		URL bannerUrl;
 		try {
 			bannerUrl = new URL(urlPath.toString());
 		} catch (MalformedURLException e) {
 			throw new DatabaseProcessingException("Could not retrieve series information.  Bad Url.  URL:" + urlPath.toString(), e);
 		}
-		
+
 		File dirF = new File(dir);
 		if(!dirF.exists() && !dirF.mkdirs()) {
 			System.err.println("Unable to make directory for storing fanart.  Directory: " + dir);
 		}
-		
+
 		StringBuffer filename = new StringBuffer(dir);
 		if(!dir.endsWith(File.separator)) {
 			filename.append(File.separator);
@@ -159,7 +160,7 @@ public class TheTvDbDatabase {
 			}
 		}
 	}
-	
+
 	public Episode lookup(String series, int season, int episode) throws DatabaseProcessingException {
 		String seriesId = getSeriesId(series);
 		Episode e = null;
@@ -171,26 +172,26 @@ public class TheTvDbDatabase {
 			e = getEpisodeInfo(seriesId, season, episode);
 			e.setSeries(s);
 		}
-		
+
 		return e;
 	}
-	
+
 	public Series lookup(String seriesId) throws DatabaseProcessingException {
 		File seriesIdFile = new File(CACHE_DIR + seriesId + ".xml");
-		
+
 		if(!seriesIdFile.exists()) {
 			StringBuffer urlPath = new StringBuffer();
-			urlPath.append(randomMirror(Mirror.XML_MIRROR_MASK).getPath()).append("/api/");
+			urlPath.append(BASE_URL).append("/api/");
 			urlPath.append(API_KEY).append("/series/").append(seriesId).append("/");
 			urlPath.append(lang).append(".xml");
-			
+
 			URL seriesUrl;
 			try {
 				seriesUrl = new URL(urlPath.toString());
 			} catch (MalformedURLException e) {
 				throw new DatabaseProcessingException("Could not retrieve series information.  Bad Url.  URL:" + urlPath.toString(), e);
 			}
-			
+
 			try {
 				PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(seriesIdFile)));
 				IterableBufferedReader in = new IterableBufferedReader(new InputStreamReader(seriesUrl.openStream()));
@@ -203,24 +204,24 @@ public class TheTvDbDatabase {
 				throw new RuntimeException("Failed to store series information.  Error: " + ioe.getMessage(), ioe);
 			}
 		}
-		
+
 		Series series = new Series();
 		try {
 			SAXParserFactory.newInstance().newSAXParser().parse(seriesIdFile, new BaseSeriesXmlHandler(series));
 		} catch (Exception e) {
 			throw new DatabaseProcessingException("Could not retrieve series information.  Error:" + e.getMessage(), e);
 		}
-		
+
 		return series;
 	}
-	
+
 	private Episode getEpisodeInfo(String seriesId, int seasonNum, int episodeNum) throws DatabaseProcessingException {
 		StringBuffer urlPath = new StringBuffer();
-		urlPath.append(randomMirror(Mirror.XML_MIRROR_MASK).getPath()).append("/api/");
+		urlPath.append(BASE_URL).append("/api/");
 		urlPath.append(API_KEY).append("/series/").append(seriesId);
 		urlPath.append("/default/").append(seasonNum).append("/").append(episodeNum);
 		urlPath.append("/").append(lang).append(".xml");
-		
+
 		System.out.println(urlPath);
 		URL episodeUrl;
 		try {
@@ -228,28 +229,46 @@ public class TheTvDbDatabase {
 		} catch (MalformedURLException e) {
 			throw new DatabaseProcessingException("Could not retrieve episode information.  Bad Url.  URL:" + urlPath.toString(), e);
 		}
-		
+
 		Episode episode = new Episode();
-		try {
-			SAXParserFactory.newInstance().newSAXParser().parse(episodeUrl.openStream(), new EpisodeXmlHandler(episode));
-		} catch (Exception e) {
-			throw new DatabaseProcessingException("Could not retrieve episode information.  Error:" + e.getMessage(), e);
-		}
-		
+        SAXParser parser;
+        try {
+            parser = SAXParserFactory.newInstance().newSAXParser();
+        } catch (ParserConfigurationException e) {
+            throw new DatabaseProcessingException("Failed to create SAX Parser", e);
+        } catch (SAXException e) {
+            throw new DatabaseProcessingException("Failed to create SAX Parser", e);
+        }
+
+        try {
+            parser.parse(episodeUrl.openStream(), new EpisodeXmlHandler(episode));
+        } catch (Exception e) {
+            System.out.println("Couldn't parse XML as text, trying GZIP");
+            //create a new Episode, just in case it was messed up above
+            episode = new Episode();
+            try {
+                parser.parse(new GZIPInputStream(episodeUrl.openStream()), new EpisodeXmlHandler(episode));
+            } catch (SAXException e1) {
+                throw new DatabaseProcessingException("Could not retrieve episode information.  Error:" + e.getMessage(), e);
+            } catch (IOException e1) {
+                throw new DatabaseProcessingException("Could not retrieve episode information.  Error:" + e.getMessage(), e);
+            }
+        }
+
 		return episode;
 	}
-	
+
 	private String getSeriesId(String seriesName) {
 		boolean writeUpdates = true;
 		File seriesIdFile = new File(CACHE_DIR + SERIES_ID_FILE);
-		
+
 		if(seriesIds == null) {
-			seriesIds = new Properties();	 
+			seriesIds = new Properties();
 			if(seriesIdFile.exists()) {
 				if(GlobalConfig.getOptions().getBoolean(GlobalConfig.VERBOSE)){
-					System.out.println("Loading Series ID cache from " + seriesIdFile.getAbsolutePath()); 
+					System.out.println("Loading Series ID cache from " + seriesIdFile.getAbsolutePath());
 				}
-				
+
 				try {
 					seriesIds.load(new BufferedReader(new FileReader(seriesIdFile)));
 				} catch (IOException e) {
@@ -260,13 +279,13 @@ public class TheTvDbDatabase {
 				System.out.println("Series ID cache file not found at: " + seriesIdFile.getAbsolutePath());
 			}
 		}
-		
+
 		String id = seriesIds.getProperty(seriesName);
 		if(id == null) {
 			id = lookupSeriesId(seriesName);
 			if(id != null) {
 				seriesIds.put(seriesName, id);
-				
+
 				if(writeUpdates) {
 					try {
 						seriesIds.store(new BufferedWriter(new FileWriter(seriesIdFile)), "");
@@ -276,17 +295,11 @@ public class TheTvDbDatabase {
 				}
 			}
 		}
-		
+
 		return id;
 	}
-	
+
 	private String lookupSeriesId(String seriesName) {
-		Mirror m = randomMirror(Mirror.XML_MIRROR_MASK);
-		if(m == null) {
-			System.out.println("Could not obtain a mirror.");
-			return null;
-		}
-		
 		URL seriesUrl;
 		String seriesNameEncode;
 		try {
@@ -294,7 +307,7 @@ public class TheTvDbDatabase {
 		} catch (UnsupportedEncodingException e2) {
 			throw new RuntimeException("Could not URL encode string: " + seriesName);
 		}
-		String urlPath = m.getPath() + "/api/GetSeries.php?seriesname=" + seriesNameEncode + "&language=" + lang;
+		String urlPath = BASE_URL + "/api/GetSeries.php?seriesname=" + seriesNameEncode + "&language=" + lang;
 		try {
 			seriesUrl = new URL(urlPath);
 		} catch (MalformedURLException e1) {
@@ -308,7 +321,7 @@ public class TheTvDbDatabase {
 			System.out.println("Failed to retrieve series id for series: " + seriesName);
 			return null;
 		}
-		
+
 		switch(seriesList.size()) {
 		case 0:
 			System.out.println("No series returned for search: " + seriesName);
@@ -321,7 +334,7 @@ public class TheTvDbDatabase {
 			return seriesList.get(0).getId();
 		}
 	}
-	
+
 	private void getMirrorList() throws DatabaseInitializationException {
 		URL mirrorUrl;
 		try {
@@ -329,14 +342,14 @@ public class TheTvDbDatabase {
 		} catch (MalformedURLException mue) {
 			throw new DatabaseInitializationException("Bad URL for mirrors file.  This is most likely a configuration issue", mue);
 		}
-		
+
 		File tmpFile = new File(CACHE_DIR + "_" + LOCAL_MIRROR_FILE);
 		if(tmpFile.exists()) {
 			if(!tmpFile.delete()) {
 				System.out.println("Could not delete temporary file.  Attempting to continue anyway.  File: " + tmpFile.getAbsolutePath());
 			}
 		}
-		
+
 		try {
 			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(tmpFile)));
 			IterableBufferedReader in = new IterableBufferedReader(new InputStreamReader(mirrorUrl.openStream()));
@@ -348,35 +361,22 @@ public class TheTvDbDatabase {
 		} catch (IOException ioe) {
 			throw new DatabaseInitializationException("Failed to retrieve mirror list.", ioe);
 		}
-		
+
 		File outFile = new File(CACHE_DIR + LOCAL_MIRROR_FILE);
 		if(outFile.exists()) {
 			if(!outFile.delete()) {
 				System.out.println("Could not delete temporary file.  Attempting to continue anyway.  File: " + outFile.getAbsolutePath());
 			}
 		}
-		
+
 		if(!tmpFile.renameTo(outFile)) {
 			throw new DatabaseInitializationException(
 					"Could not rename " + tmpFile.getAbsolutePath() + " to " + outFile.getAbsolutePath());
 		}
 	}
-	
+
 	private void parseMirrors() throws SAXException, IOException, ParserConfigurationException {
 		mirrors = new ArrayList<Mirror>();
 		SAXParserFactory.newInstance().newSAXParser().parse(new File(CACHE_DIR + LOCAL_MIRROR_FILE), new MirrorXmlHandler(mirrors));
-	}
-	
-	//XXX random mirrors are no longer necessary, remove this
-	private Mirror randomMirror(int typemask) {
-		Mirror retVal = null;
-		if(mirrors != null) {
-			int size = mirrors.size();
-			if(size > 0) {
-				retVal = mirrors.get(RandomUtil.randomInt(0, size));
-			}
-		}
-		
-		return retVal;
 	}
 }
