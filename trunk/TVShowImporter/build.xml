@@ -87,7 +87,7 @@
 		<ivy:retrieve />
 		<ivy:cachepath pathid="ivy.classpath" conf="compile" />
 
-		<javac target="1.6" source="1.6" srcdir="${out.dir}/src" destdir="${class.dir}" classpathref="ivy.classpath" includeantruntime="false">
+		<javac target="7" source="7" srcdir="${out.dir}/src" destdir="${class.dir}" classpathref="ivy.classpath" includeantruntime="false">
 		</javac>
 	</target>
 

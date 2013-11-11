@@ -85,8 +85,8 @@ public class Main {
 								storeFanart(e);
 							}
 						}
-					} catch(DatabaseProcessingException dpe) {
-						System.err.println("Skipping file due to error.  file: " + f.getPath() + " Error: " + dpe.getLocalizedMessage());
+					} catch(DatabaseProcessingException | FailedRenameException e) {
+						System.err.println("Skipping file due to error.  file: " + f.getPath() + " Error: " + e.getLocalizedMessage());
 					}
 				}
 			}
@@ -157,7 +157,7 @@ public class Main {
 		}
 	}
 
-	private static File renameFile(File f, Episode e, String pattern) {
+	private static File renameFile(File f, Episode e, String pattern) throws FailedRenameException {
 		//TODO option to specify decimal format in variable e.g. %season-num{00}%
 		DecimalFormat df = new DecimalFormat("00");
 
@@ -204,8 +204,10 @@ public class Main {
 		if(f.renameTo(newFile)) {
 			System.out.println("File renaming successful.");
 		} else {
-			System.err.println("Failed to rename " + f.getName() + " to " + newName);
-			newFile = f;
+		    String msg = "Failed to rename " + f.getName() + " to " + newName;
+			System.err.println(msg);
+			//newFile = f;
+			throw new FailedRenameException(f, newFile, msg);
 		}
 
 		//update the last mod time to be sure sage re-import this

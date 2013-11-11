@@ -2,8 +2,7 @@ package db.thetvdb;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class UtilitiesTest {
 
@@ -11,8 +10,8 @@ public class UtilitiesTest {
     public void normaizeTest() {
 
         String[][] testVals = {
-                {"Test Number ’one`", "Test Number 'one'"},
-                {"Test Number –– two", "Test Number -- two"}
+                {"Test Number `one`", "Test Number 'one'"},
+                {"Test Number â€“â€“ two", "Test Number -- two"}
         };
 
         for(String[] test : testVals) {
