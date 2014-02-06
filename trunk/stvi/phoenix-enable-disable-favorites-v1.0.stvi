@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="HETZO-3197">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="HETZO-3198"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="HETZO-3199">
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;ZOMHW-862338&quot;)" Sym="HETZO-3231">
+    <Branch Name="else" Sym="HETZO-3232">
+     <Action Name="SetWidgetName(Widg, &quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)&quot;)" Sym="HETZO-3234"/>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3233">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862338 Could not rename from: \&quot;GetFavoriteDescription(Favorite)\&quot; to: \&quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)\&quot;&quot;)" Sym="HETZO-3235"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;ZOMHW-861407&quot;)" Sym="HETZO-3273">
+    <Branch Name="else" Sym="HETZO-3274">
+     <Action Name="SetWidgetName(Widg, &quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)&quot;)" Sym="HETZO-3276"/>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3275">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-861407 Could not rename from: \&quot;GetFavoriteDescription(Favorite)\&quot; to: \&quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)\&quot;&quot;)" Sym="HETZO-3277"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="HETZO-3200"/>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="HETZO-3201">
+   <Action Name="RemoveWidgetChild(FindWidgetBySymbol(&quot;ZOMHW-861689&quot;), FindWidgetBySymbol(&quot;ZOMHW-862132&quot;))" Sym="HETZO-3254"/>
+  </Action>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="HETZO-3202">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-862274&quot;)" Sym="HETZO-3204">
+    <Branch Name="else" Sym="HETZO-3205">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3173&quot;)" Sym="HETZO-3208">
+      <Branch Name="else" Sym="HETZO-3209">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3212"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3210">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3173 \&quot;FavItem\&quot; could not add as child; parent symbol=ZOMHW-862274 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3211"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3206">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862274 \&quot;FavItem\&quot; missing parent; could not add child with symbol=HETZO-3173 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3207"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-862274&quot;)" Sym="HETZO-3213">
+    <Branch Name="else" Sym="HETZO-3214">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3176&quot;)" Sym="HETZO-3217">
+      <Branch Name="else" Sym="HETZO-3218">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3221"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3219">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3176 \&quot;FavItem\&quot; could not add as child; parent symbol=ZOMHW-862274 \&quot;\&quot;&quot;)" Sym="HETZO-3220"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3215">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862274 \&quot;FavItem\&quot; missing parent; could not add child with symbol=HETZO-3176 \&quot;\&quot;&quot;)" Sym="HETZO-3216"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-862274&quot;)" Sym="HETZO-3222">
+    <Branch Name="else" Sym="HETZO-3223">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3173&quot;)" Sym="HETZO-3226">
+      <Branch Name="else" Sym="HETZO-3227">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 0)" Sym="HETZO-3230"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3228">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3173 \&quot;FavItem\&quot; could not move child; parent symbol=ZOMHW-862274 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3229"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3224">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862274 \&quot;FavItem\&quot; missing parent; could not move child with symbol=HETZO-3173 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3225"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-862210&quot;)" Sym="HETZO-3236">
+    <Branch Name="else" Sym="HETZO-3237">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3184&quot;)" Sym="HETZO-3240">
+      <Branch Name="else" Sym="HETZO-3241">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3244"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3242">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3184 \&quot;LeftPanel\&quot; could not add as child; parent symbol=ZOMHW-862210 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3243"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3238">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862210 \&quot;LeftPanel\&quot; missing parent; could not add child with symbol=HETZO-3184 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3239"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-862210&quot;)" Sym="HETZO-3245">
+    <Branch Name="else" Sym="HETZO-3246">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;ZOMHW-7233089&quot;)" Sym="HETZO-3249">
+      <Branch Name="else" Sym="HETZO-3250">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 5)" Sym="HETZO-3253"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3251">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-7233089 \&quot;LeftPanel\&quot; could not move child; parent symbol=ZOMHW-862210 \&quot;PhoenixText - Center Justified Small (14)\&quot;&quot;)" Sym="HETZO-3252"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3247">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862210 \&quot;LeftPanel\&quot; missing parent; could not move child with symbol=ZOMHW-7233089 \&quot;PhoenixText - Center Justified Small (14)\&quot;&quot;)" Sym="HETZO-3248"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-861689&quot;)" Sym="HETZO-3255">
+    <Branch Name="else" Sym="HETZO-3256">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3193&quot;)" Sym="HETZO-3259">
+      <Branch Name="else" Sym="HETZO-3260">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3263"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3261">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3193 \&quot;Desc\&quot; could not add as child; parent symbol=ZOMHW-861689 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3262"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3257">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-861689 \&quot;Desc\&quot; missing parent; could not add child with symbol=HETZO-3193 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3258"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-861689&quot;)" Sym="HETZO-3264">
+    <Branch Name="else" Sym="HETZO-3265">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;ZOMHW-861407&quot;)" Sym="HETZO-3268">
+      <Branch Name="else" Sym="HETZO-3269">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 1)" Sym="HETZO-3272"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3270">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-861407 \&quot;Desc\&quot; could not move child; parent symbol=ZOMHW-861689 \&quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)\&quot;&quot;)" Sym="HETZO-3271"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3266">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-861689 \&quot;Desc\&quot; missing parent; could not move child with symbol=ZOMHW-861407 \&quot;java_lang_String_replaceFirst(GetFavoriteDescription(Favorite), \&quot;DisabledFavorite ?\&quot;, \&quot;\&quot;)\&quot;&quot;)" Sym="HETZO-3267"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3173&quot;)" Sym="HETZO-3278">
+    <Branch Name="else" Sym="HETZO-3279">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3174&quot;)" Sym="HETZO-3282">
+      <Branch Name="else" Sym="HETZO-3283">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3286"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3284">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3174 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3173 \&quot;true\&quot;&quot;)" Sym="HETZO-3285"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3280">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3173 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3174 \&quot;true\&quot;&quot;)" Sym="HETZO-3281"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3174&quot;)" Sym="HETZO-3287">
+    <Branch Name="else" Sym="HETZO-3288">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3172&quot;)" Sym="HETZO-3291">
+      <Branch Name="else" Sym="HETZO-3292">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3295"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3293">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3172 \&quot;true\&quot; could not add as child; parent symbol=HETZO-3174 \&quot;ItemBG\&quot;&quot;)" Sym="HETZO-3294"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3289">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3174 \&quot;true\&quot; missing parent; could not add child with symbol=HETZO-3172 \&quot;ItemBG\&quot;&quot;)" Sym="HETZO-3290"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3176&quot;)" Sym="HETZO-3296">
+    <Branch Name="else" Sym="HETZO-3297">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3177&quot;)" Sym="HETZO-3300">
+      <Branch Name="else" Sym="HETZO-3301">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3304"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3302">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3177 \&quot;\&quot; could not add as child; parent symbol=HETZO-3176 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3303"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3298">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3176 \&quot;\&quot; missing parent; could not add child with symbol=HETZO-3177 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot;&quot;)" Sym="HETZO-3299"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3177&quot;)" Sym="HETZO-3305">
+    <Branch Name="else" Sym="HETZO-3306">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3178&quot;)" Sym="HETZO-3309">
+      <Branch Name="else" Sym="HETZO-3310">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3313"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3311">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3178 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3177 \&quot;true\&quot;&quot;)" Sym="HETZO-3312"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3307">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3177 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3178 \&quot;true\&quot;&quot;)" Sym="HETZO-3308"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3177&quot;)" Sym="HETZO-3314">
+    <Branch Name="else" Sym="HETZO-3315">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3179&quot;)" Sym="HETZO-3318">
+      <Branch Name="else" Sym="HETZO-3319">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3322"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3320">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3179 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3177 \&quot;false\&quot;&quot;)" Sym="HETZO-3321"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3316">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3177 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3179 \&quot;false\&quot;&quot;)" Sym="HETZO-3317"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3178&quot;)" Sym="HETZO-3323">
+    <Branch Name="else" Sym="HETZO-3324">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3181&quot;)" Sym="HETZO-3327">
+      <Branch Name="else" Sym="HETZO-3328">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3331"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3329">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3181 \&quot;true\&quot; could not add as child; parent symbol=HETZO-3178 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3330"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3325">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3178 \&quot;true\&quot; missing parent; could not add child with symbol=HETZO-3181 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3326"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3179&quot;)" Sym="HETZO-3332">
+    <Branch Name="else" Sym="HETZO-3333">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3180&quot;)" Sym="HETZO-3336">
+      <Branch Name="else" Sym="HETZO-3337">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3340"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3338">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3180 \&quot;false\&quot; could not add as child; parent symbol=HETZO-3179 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3339"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3334">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3179 \&quot;false\&quot; missing parent; could not add child with symbol=HETZO-3180 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3335"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3180&quot;)" Sym="HETZO-3341">
+    <Branch Name="else" Sym="HETZO-3342">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3183&quot;)" Sym="HETZO-3345">
+      <Branch Name="else" Sym="HETZO-3346">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3349"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3347">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3183 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))\&quot; could not add as child; parent symbol=HETZO-3180 \&quot;Refresh()\&quot;&quot;)" Sym="HETZO-3348"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3343">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3180 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))\&quot; missing parent; could not add child with symbol=HETZO-3183 \&quot;Refresh()\&quot;&quot;)" Sym="HETZO-3344"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3181&quot;)" Sym="HETZO-3350">
+    <Branch Name="else" Sym="HETZO-3351">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3182&quot;)" Sym="HETZO-3354">
+      <Branch Name="else" Sym="HETZO-3355">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3358"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3356">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3182 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite))\&quot; could not add as child; parent symbol=HETZO-3181 \&quot;Refresh()\&quot;&quot;)" Sym="HETZO-3357"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3352">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3181 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite))\&quot; missing parent; could not add child with symbol=HETZO-3182 \&quot;Refresh()\&quot;&quot;)" Sym="HETZO-3353"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3184&quot;)" Sym="HETZO-3359">
+    <Branch Name="else" Sym="HETZO-3360">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3185&quot;)" Sym="HETZO-3363">
+      <Branch Name="else" Sym="HETZO-3364">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3367"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3365">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3185 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3184 \&quot;true\&quot;&quot;)" Sym="HETZO-3366"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3361">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3184 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3185 \&quot;true\&quot;&quot;)" Sym="HETZO-3362"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3184&quot;)" Sym="HETZO-3368">
+    <Branch Name="else" Sym="HETZO-3369">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3186&quot;)" Sym="HETZO-3372">
+      <Branch Name="else" Sym="HETZO-3373">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3376"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3374">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3186 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3184 \&quot;false\&quot;&quot;)" Sym="HETZO-3375"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3370">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3184 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3186 \&quot;false\&quot;&quot;)" Sym="HETZO-3371"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3185&quot;)" Sym="HETZO-3377">
+    <Branch Name="else" Sym="HETZO-3378">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3191&quot;)" Sym="HETZO-3381">
+      <Branch Name="else" Sym="HETZO-3382">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3385"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3383">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3191 \&quot;true\&quot; could not add as child; parent symbol=HETZO-3185 \&quot;Enable Favorite\&quot;&quot;)" Sym="HETZO-3384"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3379">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3185 \&quot;true\&quot; missing parent; could not add child with symbol=HETZO-3191 \&quot;Enable Favorite\&quot;&quot;)" Sym="HETZO-3380"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3186&quot;)" Sym="HETZO-3386">
+    <Branch Name="else" Sym="HETZO-3387">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3192&quot;)" Sym="HETZO-3390">
+      <Branch Name="else" Sym="HETZO-3391">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3394"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3392">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3192 \&quot;false\&quot; could not add as child; parent symbol=HETZO-3186 \&quot;Disable Favorite\&quot;&quot;)" Sym="HETZO-3393"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3388">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3186 \&quot;false\&quot; missing parent; could not add child with symbol=HETZO-3192 \&quot;Disable Favorite\&quot;&quot;)" Sym="HETZO-3389"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3187&quot;)" Sym="HETZO-3395">
+    <Branch Name="else" Sym="HETZO-3396">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3188&quot;)" Sym="HETZO-3399">
+      <Branch Name="else" Sym="HETZO-3400">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3403"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3401">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3188 \&quot;\&quot;Enable Favorite\&quot;\&quot; could not add as child; parent symbol=HETZO-3187 \&quot;\&quot;&quot;)" Sym="HETZO-3402"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3397">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3187 \&quot;\&quot;Enable Favorite\&quot;\&quot; missing parent; could not add child with symbol=HETZO-3188 \&quot;\&quot;&quot;)" Sym="HETZO-3398"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3189&quot;)" Sym="HETZO-3404">
+    <Branch Name="else" Sym="HETZO-3405">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3190&quot;)" Sym="HETZO-3408">
+      <Branch Name="else" Sym="HETZO-3409">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3412"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3410">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3190 \&quot;\&quot;Disable Favorite\&quot;\&quot; could not add as child; parent symbol=HETZO-3189 \&quot;\&quot;&quot;)" Sym="HETZO-3411"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3406">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3189 \&quot;\&quot;Disable Favorite\&quot;\&quot; missing parent; could not add child with symbol=HETZO-3190 \&quot;\&quot;&quot;)" Sym="HETZO-3407"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3191&quot;)" Sym="HETZO-3413">
+    <Branch Name="else" Sym="HETZO-3414">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3187&quot;)" Sym="HETZO-3417">
+      <Branch Name="else" Sym="HETZO-3418">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3421"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3419">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3187 \&quot;Enable Favorite\&quot; could not add as child; parent symbol=HETZO-3191 \&quot;\&quot;Enable Favorite\&quot;\&quot;&quot;)" Sym="HETZO-3420"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3415">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3191 \&quot;Enable Favorite\&quot; missing parent; could not add child with symbol=HETZO-3187 \&quot;\&quot;Enable Favorite\&quot;\&quot;&quot;)" Sym="HETZO-3416"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3191&quot;)" Sym="HETZO-3422">
+    <Branch Name="else" Sym="HETZO-3423">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3181&quot;)" Sym="HETZO-3426">
+      <Branch Name="else" Sym="HETZO-3427">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3430"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3428">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3181 \&quot;Enable Favorite\&quot; could not add as child; parent symbol=HETZO-3191 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3429"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3424">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3191 \&quot;Enable Favorite\&quot; missing parent; could not add child with symbol=HETZO-3181 \&quot;SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;, \&quot;\&quot;), GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3425"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3192&quot;)" Sym="HETZO-3431">
+    <Branch Name="else" Sym="HETZO-3432">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3189&quot;)" Sym="HETZO-3435">
+      <Branch Name="else" Sym="HETZO-3436">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3439"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3437">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3189 \&quot;Disable Favorite\&quot; could not add as child; parent symbol=HETZO-3192 \&quot;\&quot;Disable Favorite\&quot;\&quot;&quot;)" Sym="HETZO-3438"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3433">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3192 \&quot;Disable Favorite\&quot; missing parent; could not add child with symbol=HETZO-3189 \&quot;\&quot;Disable Favorite\&quot;\&quot;&quot;)" Sym="HETZO-3434"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3192&quot;)" Sym="HETZO-3440">
+    <Branch Name="else" Sym="HETZO-3441">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3180&quot;)" Sym="HETZO-3444">
+      <Branch Name="else" Sym="HETZO-3445">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3448"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3446">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3180 \&quot;Disable Favorite\&quot; could not add as child; parent symbol=HETZO-3192 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3447"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3442">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3192 \&quot;Disable Favorite\&quot; missing parent; could not add child with symbol=HETZO-3180 \&quot;SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + \&quot;DisabledFavorite\&quot;, GetFavoriteSubCategory(Favorite))\&quot;&quot;)" Sym="HETZO-3443"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3193&quot;)" Sym="HETZO-3449">
+    <Branch Name="else" Sym="HETZO-3450">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3194&quot;)" Sym="HETZO-3453">
+      <Branch Name="else" Sym="HETZO-3454">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3457"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3455">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3194 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3193 \&quot;true\&quot;&quot;)" Sym="HETZO-3456"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3451">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3193 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3194 \&quot;true\&quot;&quot;)" Sym="HETZO-3452"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3193&quot;)" Sym="HETZO-3458">
+    <Branch Name="else" Sym="HETZO-3459">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3195&quot;)" Sym="HETZO-3462">
+      <Branch Name="else" Sym="HETZO-3463">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3466"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3464">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3195 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; could not add as child; parent symbol=HETZO-3193 \&quot;false\&quot;&quot;)" Sym="HETZO-3465"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3460">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3193 \&quot;java_lang_String_endsWith(GetFavoriteCategory(Favorite), \&quot;DisabledFavorite\&quot;)\&quot; missing parent; could not add child with symbol=HETZO-3195 \&quot;false\&quot;&quot;)" Sym="HETZO-3461"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3194&quot;)" Sym="HETZO-3467">
+    <Branch Name="else" Sym="HETZO-3468">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-3196&quot;)" Sym="HETZO-3471">
+      <Branch Name="else" Sym="HETZO-3472">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3475"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3473">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3196 \&quot;true\&quot; could not add as child; parent symbol=HETZO-3194 \&quot;\&quot;Favorite (Disabled):\&quot;\&quot;&quot;)" Sym="HETZO-3474"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3469">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3194 \&quot;true\&quot; missing parent; could not add child with symbol=HETZO-3196 \&quot;\&quot;Favorite (Disabled):\&quot;\&quot;&quot;)" Sym="HETZO-3470"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3195&quot;)" Sym="HETZO-3476">
+    <Branch Name="else" Sym="HETZO-3477">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;ZOMHW-862132&quot;)" Sym="HETZO-3480">
+      <Branch Name="else" Sym="HETZO-3481">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3484"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3482">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-862132 \&quot;false\&quot; could not add as child; parent symbol=HETZO-3195 \&quot;\&quot;Favorite:\&quot;\&quot;&quot;)" Sym="HETZO-3483"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3478">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3195 \&quot;false\&quot; missing parent; could not add child with symbol=ZOMHW-862132 \&quot;\&quot;Favorite:\&quot;\&quot;&quot;)" Sym="HETZO-3479"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-3196&quot;)" Sym="HETZO-3485">
+    <Branch Name="else" Sym="HETZO-3486">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;ZOMHW-861431&quot;)" Sym="HETZO-3489">
+      <Branch Name="else" Sym="HETZO-3490">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-3493"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-3491">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-861431 \&quot;\&quot;Favorite (Disabled):\&quot;\&quot; could not add as child; parent symbol=HETZO-3196 \&quot;\&quot;&quot;)" Sym="HETZO-3492"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-3487">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-3196 \&quot;\&quot;Favorite (Disabled):\&quot;\&quot; missing parent; could not add child with symbol=ZOMHW-861431 \&quot;\&quot;&quot;)" Sym="HETZO-3488"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="HETZO-3203"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="HETZO-3494"/>
+ </Hook>
+ <Action Name="SetFavoriteCategories(Favorite, GetFavoriteCategory(Favorite) + &quot;DisabledFavorite&quot;, GetFavoriteSubCategory(Favorite))" Sym="HETZO-3180"/>
+ <Action Name="SetFavoriteCategories(Favorite, java_lang_String_replace(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;, &quot;&quot;), GetFavoriteSubCategory(Favorite))" Sym="HETZO-3181"/>
+ <Action Name="Refresh()" Sym="HETZO-3182"/>
+ <Action Name="Refresh()" Sym="HETZO-3183"/>
+ <Action Name="&quot;Enable Favorite&quot;" Sym="HETZO-3187"/>
+ <Action Name="&quot;Disable Favorite&quot;" Sym="HETZO-3189"/>
+ <Action Name="&quot;Favorite (Disabled):&quot;" Sym="HETZO-3196"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;)" Sym="HETZO-3173"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;)" Sym="HETZO-3177"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;)" Sym="HETZO-3184"/>
+ <Conditional Name="java_lang_String_endsWith(GetFavoriteCategory(Favorite), &quot;DisabledFavorite&quot;)" Sym="HETZO-3193"/>
+ <Branch Name="true" Sym="HETZO-3174"/>
+ <Branch Name="true" Sym="HETZO-3178"/>
+ <Branch Name="false" Sym="HETZO-3179"/>
+ <Branch Name="true" Sym="HETZO-3185"/>
+ <Branch Name="false" Sym="HETZO-3186"/>
+ <Branch Name="true" Sym="HETZO-3194"/>
+ <Branch Name="false" Sym="HETZO-3195"/>
+ <Listener Name="" Sym="HETZO-3176">
+  <ListenerEvent>Record</ListenerEvent>
+ </Listener>
+ <Item Name="Enable Favorite" Sym="HETZO-3191"/>
+ <Item Name="Disable Favorite" Sym="HETZO-3192"/>
+ <Text Name="" Sym="HETZO-3188"/>
+ <Text Name="" Sym="HETZO-3190"/>
+ <Shape Name="ItemBG" Sym="HETZO-3172">
+  <ForegroundColor>=GetProperty("phoenix/disabled_favorite_color", "0xFF0000")</ForegroundColor>
+  <ForegroundAlpha>=GetProperty("phoenix/disabled_favorite_alpha", 36)</ForegroundAlpha>
+  <FixedWidth>1.0</FixedWidth>
+  <FixedHeight>1.0</FixedHeight>
+  <ShapeType>Rectangle</ShapeType>
+  <ShapeFill>true</ShapeFill>
+ </Shape>
+</Module>
