@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="HETZO-1912">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="HETZO-1913"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="HETZO-1914"/>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="HETZO-1915">
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;RGJDX-84029&quot;)" Sym="HETZO-1938">
+    <Branch Name="else" Sym="HETZO-1939">
+     <Action Name="SetWidgetProperty(Widg, &quot;FixedWidth&quot;, &quot;0.27&quot;)" Sym="HETZO-1941"/>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1940">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=RGJDX-84029 could not change property FixedWidth from: \&quot;0.17\&quot; to: \&quot;0.27\&quot;&quot;)" Sym="HETZO-1942"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;RGJDX-84286&quot;)" Sym="HETZO-1943">
+    <Branch Name="else" Sym="HETZO-1944">
+     <Action Name="SetWidgetProperty(Widg, &quot;FixedWidth&quot;, &quot;0.23&quot;)" Sym="HETZO-1946"/>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1945">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=RGJDX-84286 could not change property FixedWidth from: \&quot;0.17\&quot; to: \&quot;0.23\&quot;&quot;)" Sym="HETZO-1947"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="HETZO-1916">
+   <Action Name="RemoveWidgetChild(FindWidgetBySymbol(&quot;RGJDX-83997&quot;), FindWidgetBySymbol(&quot;RGJDX-84044&quot;))" Sym="HETZO-1919"/>
+  </Action>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="HETZO-1917">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;RGJDX-83997&quot;)" Sym="HETZO-1920">
+    <Branch Name="else" Sym="HETZO-1921">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-1911&quot;)" Sym="HETZO-1924">
+      <Branch Name="else" Sym="HETZO-1925">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-1928"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-1926">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1911 \&quot;WidgetBarContainer\&quot; could not add as child; parent symbol=RGJDX-83997 \&quot;false\&quot;&quot;)" Sym="HETZO-1927"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1922">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=RGJDX-83997 \&quot;WidgetBarContainer\&quot; missing parent; could not add child with symbol=HETZO-1911 \&quot;false\&quot;&quot;)" Sym="HETZO-1923"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;RGJDX-83997&quot;)" Sym="HETZO-1929">
+    <Branch Name="else" Sym="HETZO-1930">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-1911&quot;)" Sym="HETZO-1933">
+      <Branch Name="else" Sym="HETZO-1934">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 3)" Sym="HETZO-1937"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-1935">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1911 \&quot;WidgetBarContainer\&quot; could not move child; parent symbol=RGJDX-83997 \&quot;false\&quot;&quot;)" Sym="HETZO-1936"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1931">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=RGJDX-83997 \&quot;WidgetBarContainer\&quot; missing parent; could not move child with symbol=HETZO-1911 \&quot;false\&quot;&quot;)" Sym="HETZO-1932"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-1911&quot;)" Sym="HETZO-1948">
+    <Branch Name="else" Sym="HETZO-1949">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;RGJDX-84044&quot;)" Sym="HETZO-1952">
+      <Branch Name="else" Sym="HETZO-1953">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-1956"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-1954">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=RGJDX-84044 \&quot;false\&quot; could not add as child; parent symbol=HETZO-1911 \&quot;DiscBar\&quot;&quot;)" Sym="HETZO-1955"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1950">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1911 \&quot;false\&quot; missing parent; could not add child with symbol=RGJDX-84044 \&quot;DiscBar\&quot;&quot;)" Sym="HETZO-1951"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="HETZO-1918"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="HETZO-1957"/>
+ </Hook>
+ <Conditional Name="false" Sym="HETZO-1911"/>
+</Module>

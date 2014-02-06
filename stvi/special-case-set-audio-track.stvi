@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="HETZO-1958">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="HETZO-1959"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="HETZO-1960"/>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="HETZO-1961"/>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="HETZO-1962"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="HETZO-1963">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;AZUDJ-155534&quot;)" Sym="HETZO-1965">
+    <Branch Name="else" Sym="HETZO-1966">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-1875&quot;)" Sym="HETZO-1969">
+      <Branch Name="else" Sym="HETZO-1970">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-1973"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-1971">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1875 \&quot;MediaPlayerFileLoadComplete\&quot; could not add as child; parent symbol=AZUDJ-155534 \&quot;\&quot;REM Special case for just my setup.  Some comcast channels have a blank audio track\&quot;\&quot;&quot;)" Sym="HETZO-1972"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1967">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=AZUDJ-155534 \&quot;MediaPlayerFileLoadComplete\&quot; missing parent; could not add child with symbol=HETZO-1875 \&quot;\&quot;REM Special case for just my setup.  Some comcast channels have a blank audio track\&quot;\&quot;&quot;)" Sym="HETZO-1968"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-1875&quot;)" Sym="HETZO-1974">
+    <Branch Name="else" Sym="HETZO-1975">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-1873&quot;)" Sym="HETZO-1978">
+      <Branch Name="else" Sym="HETZO-1979">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-1982"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-1980">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1873 \&quot;\&quot;REM Special case for just my setup.  Some comcast channels have a blank audio track\&quot;\&quot; could not add as child; parent symbol=HETZO-1875 \&quot;IsTVFile(MediaFile) &amp;&amp; Size(GetDVDAvailableLanguages()) == 2 &amp;&amp; GetAiringChannelName(MediaFile) == \&quot;WATM\&quot;\&quot;&quot;)" Sym="HETZO-1981"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1976">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1875 \&quot;\&quot;REM Special case for just my setup.  Some comcast channels have a blank audio track\&quot;\&quot; missing parent; could not add child with symbol=HETZO-1873 \&quot;IsTVFile(MediaFile) &amp;&amp; Size(GetDVDAvailableLanguages()) == 2 &amp;&amp; GetAiringChannelName(MediaFile) == \&quot;WATM\&quot;\&quot;&quot;)" Sym="HETZO-1977"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;HETZO-1873&quot;)" Sym="HETZO-1983">
+    <Branch Name="else" Sym="HETZO-1984">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;HETZO-1874&quot;)" Sym="HETZO-1987">
+      <Branch Name="else" Sym="HETZO-1988">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="HETZO-1991"/>
+      </Branch>
+      <Branch Name="null" Sym="HETZO-1989">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1874 \&quot;IsTVFile(MediaFile) &amp;&amp; Size(GetDVDAvailableLanguages()) == 2 &amp;&amp; GetAiringChannelName(MediaFile) == \&quot;WATM\&quot;\&quot; could not add as child; parent symbol=HETZO-1873 \&quot;DVDAudioChange(1)\&quot;&quot;)" Sym="HETZO-1990"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="HETZO-1985">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=HETZO-1873 \&quot;IsTVFile(MediaFile) &amp;&amp; Size(GetDVDAvailableLanguages()) == 2 &amp;&amp; GetAiringChannelName(MediaFile) == \&quot;WATM\&quot;\&quot; missing parent; could not add child with symbol=HETZO-1874 \&quot;DVDAudioChange(1)\&quot;&quot;)" Sym="HETZO-1986"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="HETZO-1964"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="HETZO-1992"/>
+ </Hook>
+ <Action Name="&quot;REM Special case for just my setup.  Some comcast channels have a blank audio track&quot;" Sym="HETZO-1875"/>
+ <Action Name="DVDAudioChange(1)" Sym="HETZO-1874"/>
+ <Conditional Name="IsTVFile(MediaFile) &amp;&amp; Size(GetDVDAvailableLanguages()) == 2 &amp;&amp; GetAiringChannelName(MediaFile) == &quot;WATM&quot;" Sym="HETZO-1873"/>
+</Module>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="IORER-18">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="IORER-19"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="IORER-20"/>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="IORER-21"/>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="IORER-22"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="IORER-23">
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-2367275&quot;)" Sym="IORER-25">
+    <Branch Name="else" Sym="IORER-26">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-8&quot;)" Sym="IORER-29">
+      <Branch Name="else" Sym="IORER-30">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="IORER-33"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-31">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-8 \&quot;AiringCell\&quot; could not add as child; parent symbol=ZOMHW-2367275 \&quot;\&quot;&quot;)" Sym="IORER-32"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-27">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-2367275 \&quot;AiringCell\&quot; missing parent; could not add child with symbol=IORER-8 \&quot;\&quot;&quot;)" Sym="IORER-28"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-2367275&quot;)" Sym="IORER-34">
+    <Branch Name="else" Sym="IORER-35">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-15&quot;)" Sym="IORER-38">
+      <Branch Name="else" Sym="IORER-39">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="IORER-42"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-40">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-15 \&quot;AiringCell\&quot; could not add as child; parent symbol=ZOMHW-2367275 \&quot;\&quot;&quot;)" Sym="IORER-41"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-36">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-2367275 \&quot;AiringCell\&quot; missing parent; could not add child with symbol=IORER-15 \&quot;\&quot;&quot;)" Sym="IORER-37"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-2367275&quot;)" Sym="IORER-43">
+    <Branch Name="else" Sym="IORER-44">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-8&quot;)" Sym="IORER-47">
+      <Branch Name="else" Sym="IORER-48">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 12)" Sym="IORER-51"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-49">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-8 \&quot;AiringCell\&quot; could not move child; parent symbol=ZOMHW-2367275 \&quot;\&quot;&quot;)" Sym="IORER-50"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-45">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-2367275 \&quot;AiringCell\&quot; missing parent; could not move child with symbol=IORER-8 \&quot;\&quot;&quot;)" Sym="IORER-46"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;ZOMHW-2367275&quot;)" Sym="IORER-52">
+    <Branch Name="else" Sym="IORER-53">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-15&quot;)" Sym="IORER-56">
+      <Branch Name="else" Sym="IORER-57">
+       <Action Name="InsertWidgetChild(Widg1, Widg2, 13)" Sym="IORER-60"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-58">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-15 \&quot;AiringCell\&quot; could not move child; parent symbol=ZOMHW-2367275 \&quot;\&quot;&quot;)" Sym="IORER-59"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-54">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=ZOMHW-2367275 \&quot;AiringCell\&quot; missing parent; could not move child with symbol=IORER-15 \&quot;\&quot;&quot;)" Sym="IORER-55"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;IORER-8&quot;)" Sym="IORER-61">
+    <Branch Name="else" Sym="IORER-62">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-13&quot;)" Sym="IORER-65">
+      <Branch Name="else" Sym="IORER-66">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="IORER-69"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-67">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-13 \&quot;\&quot; could not add as child; parent symbol=IORER-8 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) + (3600000*24), GetElement(Times, 1) + (3600000*24))\&quot;&quot;)" Sym="IORER-68"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-63">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-8 \&quot;\&quot; missing parent; could not add child with symbol=IORER-13 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) + (3600000*24), GetElement(Times, 1) + (3600000*24))\&quot;&quot;)" Sym="IORER-64"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;IORER-13&quot;)" Sym="IORER-70">
+    <Branch Name="else" Sym="IORER-71">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-14&quot;)" Sym="IORER-74">
+      <Branch Name="else" Sym="IORER-75">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="IORER-78"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-76">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-14 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) + (3600000*24), GetElement(Times, 1) + (3600000*24))\&quot; could not add as child; parent symbol=IORER-13 \&quot;Refresh()\&quot;&quot;)" Sym="IORER-77"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-72">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-13 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) + (3600000*24), GetElement(Times, 1) + (3600000*24))\&quot; missing parent; could not add child with symbol=IORER-14 \&quot;Refresh()\&quot;&quot;)" Sym="IORER-73"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;IORER-15&quot;)" Sym="IORER-79">
+    <Branch Name="else" Sym="IORER-80">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-16&quot;)" Sym="IORER-83">
+      <Branch Name="else" Sym="IORER-84">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="IORER-87"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-85">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-16 \&quot;\&quot; could not add as child; parent symbol=IORER-15 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) - (3600000*24), GetElement(Times, 1) - (3600000*24))\&quot;&quot;)" Sym="IORER-86"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-81">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-15 \&quot;\&quot; missing parent; could not add child with symbol=IORER-16 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) - (3600000*24), GetElement(Times, 1) - (3600000*24))\&quot;&quot;)" Sym="IORER-82"/>
+    </Branch>
+   </Conditional>
+   <Conditional Name="Widg1 = FindWidgetBySymbol(&quot;IORER-16&quot;)" Sym="IORER-88">
+    <Branch Name="else" Sym="IORER-89">
+     <Conditional Name="Widg2 = FindWidgetBySymbol(&quot;IORER-17&quot;)" Sym="IORER-92">
+      <Branch Name="else" Sym="IORER-93">
+       <Action Name="AddWidgetChild(Widg1, Widg2)" Sym="IORER-96"/>
+      </Branch>
+      <Branch Name="null" Sym="IORER-94">
+       <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-17 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) - (3600000*24), GetElement(Times, 1) - (3600000*24))\&quot; could not add as child; parent symbol=IORER-16 \&quot;Refresh()\&quot;&quot;)" Sym="IORER-95"/>
+      </Branch>
+     </Conditional>
+    </Branch>
+    <Branch Name="null" Sym="IORER-90">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=IORER-16 \&quot;Times=CreateTimeSpan(GetElement(Times, 0) - (3600000*24), GetElement(Times, 1) - (3600000*24))\&quot; missing parent; could not add child with symbol=IORER-17 \&quot;Refresh()\&quot;&quot;)" Sym="IORER-91"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="IORER-24"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="IORER-97"/>
+ </Hook>
+ <Action Name="Times=CreateTimeSpan(GetElement(Times, 0) + (3600000*24), GetElement(Times, 1) + (3600000*24))" Sym="IORER-13"/>
+ <Action Name="Refresh()" Sym="IORER-14"/>
+ <Action Name="Times=CreateTimeSpan(GetElement(Times, 0) - (3600000*24), GetElement(Times, 1) - (3600000*24))" Sym="IORER-16"/>
+ <Action Name="Refresh()" Sym="IORER-17"/>
+ <Listener Name="" Sym="IORER-8">
+  <ListenerEvent>Skip Fwd #2</ListenerEvent>
+ </Listener>
+ <Listener Name="" Sym="IORER-15">
+  <ListenerEvent>Skip Bkwd #2</ListenerEvent>
+ </Listener>
+</Module>
